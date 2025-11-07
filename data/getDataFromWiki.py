@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-url = "https://en.wikipedia.org/wiki/Glossary_of_physics"
+url = "https://en.wikipedia.org/wiki/Glossary_of_computer_science"
 
 # Use a polite User-Agent so Wikipedia serves full content
 headers = {
@@ -40,5 +40,5 @@ for dl in dls:
 print("✅ Found", len(concepts), "concepts")
 
 df = pd.DataFrame(concepts)
-df.to_csv("glossary_of_physics.csv", index=False, encoding="utf-8")
-print("💾 Saved to glossary_of_physics.csv")
+df.to_csv("glossary_of_cs.csv", index=False, encoding="utf-8")
+print("💾 Saved to glossary_of_cs.csv")
