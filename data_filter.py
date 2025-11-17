@@ -69,18 +69,51 @@ def LLM_Judge(major: str, term: str, explanation: str = None):
     # print(completion)
     return completion.choices[0].message.content
 
+def get_processed_terms(output_path: str):
+    """Read existing output file and return set of already processed terms"""
+    processed_terms = set()
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    if line.strip():
+                        entry = json.loads(line.strip())
+                        term = entry.get("Term", "")
+                        if term:
+                            processed_terms.add(term)
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"Warning: Could not read existing output file: {e}")
+    return processed_terms
+
 def process_csv_to_jsonl(major:str, csv_path: str, output_path: str):
     df = pd.read_csv(csv_path)
     
+    # Get already processed terms
+    processed_terms = get_processed_terms(output_path)
+    if processed_terms:
+        print(f"Found {len(processed_terms)} already processed terms. Skipping those...")
+    
+    total_rows = len(df)
+    skipped_count = 0
+    processed_count = 0
+    
     with open(output_path, "a", encoding="utf-8") as f:
         for _, row in df.iterrows():
-        # for _, row in df.head().iterrows():
             term = row.get("term", "")
             explanation = row.get("definition", None)
+            
+            # Skip if already processed
+            if term in processed_terms:
+                skipped_count += 1
+                print(f"⏭️  Skipped (already processed): {term}")
+                continue
             
             result = LLM_Judge(major, term, explanation)
             f.write(json.dumps(json.loads(result), ensure_ascii=False) + "\n")
             print(f"✅ Processed: {term}")
+            processed_count += 1
+    
+    print(f"\nSummary: {processed_count} new entries processed, {skipped_count} skipped, {total_rows} total in CSV")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process CSV files and generate JSONL output with LLM judgments")
