@@ -73,7 +73,7 @@ for csv_file in "$DATA_DIR"/*.csv; do
     else
         # Create output filename based on input filename
         output_filename=$(basename "$csv_file" .csv)_results.jsonl
-        output_path="$SCRIPT_DIR/$output_filename"
+        output_path="$SCRIPT_DIR/judged_dataset/$output_filename"
     fi
     
     echo "Processing: $filename"
