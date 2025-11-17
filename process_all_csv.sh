@@ -6,8 +6,8 @@
 
 # Get the directory where the script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DATA_DIR="$SCRIPT_DIR/data"
-PYTHON_SCRIPT="$SCRIPT_DIR/data_filter.py"
+DATA_DIR="$SCRIPT_DIR/data/raw_data"
+PYTHON_SCRIPT="$SCRIPT_DIR/data/data_filter.py"
 
 # Check if data directory exists
 if [ ! -d "$DATA_DIR" ]; then
@@ -73,7 +73,7 @@ for csv_file in "$DATA_DIR"/*.csv; do
     else
         # Create output filename based on input filename
         output_filename=$(basename "$csv_file" .csv)_results.jsonl
-        output_path="$SCRIPT_DIR/judged_dataset/$output_filename"
+        output_path="$SCRIPT_DIR/data/judged_dataset/$output_filename"
     fi
     
     echo "Processing: $filename"
