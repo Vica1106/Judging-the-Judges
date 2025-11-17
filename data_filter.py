@@ -6,6 +6,8 @@ from langfuse.openai import openai
 import os
 import pandas as pd
 import json
+import argparse
+import sys
 
 def LLM_Judge(major: str, term: str, explanation: str = None):
     #Create a chat completion using Langfuse-integrated OpenAI client
@@ -71,8 +73,8 @@ def process_csv_to_jsonl(major:str, csv_path: str, output_path: str):
     df = pd.read_csv(csv_path)
     
     with open(output_path, "a", encoding="utf-8") as f:
-        # for _, row in df.iterrows():
-        for _, row in df.head().iterrows():
+        for _, row in df.iterrows():
+        # for _, row in df.head().iterrows():
             term = row.get("term", "")
             explanation = row.get("definition", None)
             
@@ -81,8 +83,17 @@ def process_csv_to_jsonl(major:str, csv_path: str, output_path: str):
             print(f"✅ Processed: {term}")
 
 if __name__ == "__main__":
-    input_csv = "data/glossary_of_physics.csv"
-    output_jsonl = "results.jsonl"
-    major = "Physics"
-    process_csv_to_jsonl(major,input_csv, output_jsonl)
+    parser = argparse.ArgumentParser(description="Process CSV files and generate JSONL output with LLM judgments")
+    parser.add_argument("--major", type=str, required=True, help="Academic major name (e.g., 'Physics', 'AI', 'Computer Science')")
+    parser.add_argument("--input", type=str, required=True, help="Path to input CSV file")
+    parser.add_argument("--output", type=str, default="results.jsonl", help="Path to output JSONL file (default: results.jsonl)")
+    
+    args = parser.parse_args()
+    
+    # Check if input file exists
+    if not os.path.exists(args.input):
+        print(f"Error: Input file '{args.input}' not found.")
+        sys.exit(1)
+    
+    process_csv_to_jsonl(args.major, args.input, args.output)
    
