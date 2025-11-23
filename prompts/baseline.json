@@ -1,5 +1,5 @@
 {
-    "prompt": "Explain the following concept in plain language as short as possible: {concept}",
+    "prompt": "Explain the following concept in plain language in 200 words or less: {concept}",
     "description": "Minimal instruction; baseline explanation ability."
   }
   
