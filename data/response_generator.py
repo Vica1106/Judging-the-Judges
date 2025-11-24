@@ -8,6 +8,7 @@ import json
 import argparse
 import sys
 import re
+import csv
 
 def LLM_Judge(major: str, word: str, system_prompt: str):
     #Create a chat completion using Langfuse-integrated OpenAI client
@@ -57,23 +58,58 @@ def build_output_path_with_prompt(output_path: str, prompt_file_path: str) -> st
     return os.path.join(directory, new_filename) if directory else new_filename
 
 def calculate_average_score(entry):
-    """Calculate average score from the 6 dimensions"""
-    scores = [
-        entry.get("Specialization", 0),
-        entry.get("Complexity", 0),
-        entry.get("Familiarity", 0),
-        entry.get("Explainability", 0),
-        entry.get("Interdisciplinary_Reach", 0),
-        entry.get("Cognitive_Load", 0)
-    ]
-    return sum(scores) / len(scores) if scores else 0
+    """Calculate average score using available keys; defaults to the three metrics pipeline output."""
+    keys = ["Complexity", "Familiarity", "Explainability"]
+    vals = [entry.get(k, 0) for k in keys]
+    # Handle non-numeric gracefully
+    numeric_vals = []
+    for v in vals:
+        try:
+            numeric_vals.append(float(v))
+        except (TypeError, ValueError):
+            numeric_vals.append(0.0)
+    return sum(numeric_vals) / len(numeric_vals) if numeric_vals else 0.0
 
 def generate_top_k_filename(input_path: str, top_n: int):
     """Generate output filename based on input filename"""
     base_name = os.path.splitext(input_path)[0]  # Remove .jsonl extension
     return f"{base_name}_top{top_n}.jsonl"
 
-def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int = 10, prompt_template: str = ""):
+def _extract_major_from_csv_path(csv_path: str) -> str:
+    """Infer human-readable major from raw_data CSV filename."""
+    base = os.path.splitext(os.path.basename(csv_path))[0]  # glossary_of_X
+    major_key = re.sub(r"^glossary_of_", "", base)
+    mapping = {
+        "AI": "Artificial Intelligence",
+        "cs": "Computer Science",
+        "stats": "Statistics",
+    }
+    return mapping.get(major_key, major_key.title())
+
+def _load_terms_from_csv(csv_path: str):
+    """Load 'term' column (first column) from CSV."""
+    terms = []
+    with open(csv_path, "r", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        header = next(reader, None)
+        # Try to find 'term' column; else assume first column
+        term_idx = 0
+        if header:
+            lower = [h.strip().lower() for h in header]
+            if "term" in lower:
+                term_idx = lower.index("term")
+            else:
+                # header is data row, treat as data
+                # reset reader by including header as first row
+                f.seek(0)
+                reader = csv.reader(f)
+        for row in reader:
+            if not row:
+                continue
+            terms.append(row[term_idx].strip())
+    return terms
+
+def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int = 10, prompt_template: str = "", csv_path: str = ""):
     """Read JSONL results, find top N by average score, and generate explanations"""
     top_k_filename = generate_top_k_filename(jsonl_path, top_n)
     top_entries = []
@@ -108,6 +144,24 @@ def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int 
                 if line.strip():
                     entries.append(json.loads(line.strip()))
         
+        # If Term/Major are missing (e.g., scores-only pipeline), enrich from CSV if provided
+        if entries and csv_path:
+            needs_term = "Term" not in entries[0]
+            needs_major = "Major" not in entries[0]
+            if needs_term or needs_major:
+                try:
+                    terms = _load_terms_from_csv(csv_path)
+                except Exception as e:
+                    print(f"Warning: Failed to load terms from CSV '{csv_path}': {e}")
+                    terms = []
+                inferred_major = _extract_major_from_csv_path(csv_path) if needs_major else ""
+                # Assign term/major by row order
+                for i, entry in enumerate(entries):
+                    if needs_term and i < len(terms):
+                        entry["Term"] = terms[i]
+                    if needs_major:
+                        entry["Major"] = inferred_major
+
         if not entries:
             print(f"Error: No entries found in {jsonl_path}")
             return
@@ -138,7 +192,7 @@ def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int 
         print(f"✅ Saved top {top_n} entries to: {top_k_filename}")
         print("")
     
-    # Get major from first entry
+    # Get major from first entry (may be inferred earlier)
     major = top_entries[0].get("Major", "")
     
     # Generate explanations for top entries
@@ -163,10 +217,12 @@ def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process JSONL results and generate explanations for top N terms")
-    parser.add_argument("--input", type=str, default="data/judged_dataset/glossary_of_AI_results_top10.jsonl", help="Path to input JSONL file from data_filter.py")
-    parser.add_argument("--output", type=str, default="data/response_dataset/top_explanations_AI.jsonl", help="Path to output JSONL file (default: top_explanations.jsonl)")
+    parser.add_argument("--input", type=str, default="judged_dataset/glossary_of_AI_results_top10.jsonl", help="Path to input JSONL file from data_filter.py")
+    parser.add_argument("--output", type=str, default="response_dataset/top_explanations_AI.jsonl", help="Path to output JSONL file (default: top_explanations.jsonl)")
     parser.add_argument("--top", type=int, default=10, help="Number of top terms to process (default: 10)")
     parser.add_argument("--prompt-file", type=str, default="prompts/baseline.json", help="Path to prompt file (JSON with 'prompt' key or plain text).")
+    parser.add_argument("--csv", type=str, default="", help="Path to the original raw_data CSV for inferring Term/Major if missing.")
+    parser.add_argument("--no-tag", action="store_true", help="Do not append prompt tag to output filename.")
     
     args = parser.parse_args()
     
@@ -176,6 +232,6 @@ if __name__ == "__main__":
         sys.exit(1)
     
     prompt_template = load_prompt_file(args.prompt_file)
-    output_with_tag = build_output_path_with_prompt(args.output, args.prompt_file)
-    process_jsonl_to_explanations(args.input, output_with_tag, args.top, prompt_template)
+    final_output = args.output if args.no_tag else build_output_path_with_prompt(args.output, args.prompt_file)
+    process_jsonl_to_explanations(args.input, final_output, args.top, prompt_template, args.csv)
    

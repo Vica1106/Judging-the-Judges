@@ -15,7 +15,7 @@ echo "=========================================="
 echo ""
 
 # Run the evaluation (script will automatically find all JSONL files)
-python "$SCRIPT_DIR/evaluate_explanations.py" --output "$EVALUATION_OUTPUT"
+python "$SCRIPT_DIR/analyze/evaluate_explanations.py" --output "$EVALUATION_OUTPUT"
 
 if [ $? -ne 0 ]; then
     echo ""
@@ -30,7 +30,7 @@ echo "=========================================="
 echo ""
 
 # Run the analysis
-python "$SCRIPT_DIR/analyze_evaluation.py" --input "$EVALUATION_OUTPUT" --output "$ELO_OUTPUT"
+python "$SCRIPT_DIR/analyze/analyze_evaluation.py" --input "$EVALUATION_OUTPUT" --output "$ELO_OUTPUT"
 
 if [ $? -eq 0 ]; then
     echo ""

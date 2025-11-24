@@ -1,7 +1,33 @@
 # Judging-the-Judges
 Judging the Judges: Using AI and Humans to Evaluate LLM Explanations
 
-## Quick start: scrape a Wikipedia glossary to CSV
+## Quick start: Run the full pipeline with shell scripts
+
+You can run the entire pipeline with two commands from the repo root:
+
+```bash
+# 1) Build judged and response datasets for all CSVs in data/raw_data/
+bash process_all_csv.sh
+
+# 2) Evaluate all generated explanations and compute Elo ratings
+bash run_evaluation.sh
+```
+
+What happens:
+- Judged outputs are written to `data/judged_dataset/*.jsonl`
+- Explanations are generated for three prompt variants and saved under:
+  - `data/response_dataset/baseline/`
+  - `data/response_dataset/level2_multi_aspect/`
+  - `data/response_dataset/level3_multi_perspective/`
+- Pairwise evaluation results go to `result/evaluation_results.jsonl`
+- Elo rankings go to `result/elo_ratings.json`
+
+Requirements:
+- A `.env` file with your API keys (e.g., `OPENAI_API_KEY=...`)
+- Prompt files in `prompts/` (`baseline.json`, `level2_multi_aspect.json`, `level3_multi_perspective.json`)
+- CSVs to process in `data/raw_data/` (e.g., `glossary_of_AI.csv`, `glossary_of_cs.csv`, `glossary_of_stats.csv`)
+
+## Scrape a Wikipedia glossary to CSV
 
 Use the script in 'data/getDataFromWiki.py' to fetch a glossary page from Wikipedia and save it as a CSV.
 

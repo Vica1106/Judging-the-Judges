@@ -8,6 +8,11 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DATA_DIR="$SCRIPT_DIR/data/raw_data"
 PYTHON_SCRIPT="$SCRIPT_DIR/data/data_filter.py"
+RESPONSE_SCRIPT="$SCRIPT_DIR/data/response_generator.py"
+
+# Prompt variants to generate responses for
+PROMPT_VARIANTS=("baseline" "level2_multi_aspect" "level3_multi_perspective")
+PROMPT_DIR="$SCRIPT_DIR/prompts"
 
 # Check if data directory exists
 if [ ! -d "$DATA_DIR" ]; then
@@ -21,11 +26,7 @@ if [ ! -f "$PYTHON_SCRIPT" ]; then
     exit 1
 fi
 
-# Parse command line arguments
-OUTPUT_FILE=""
-if [ "$1" == "--output" ] && [ -n "$2" ]; then
-    OUTPUT_FILE="$2"
-fi
+
 
 # Function to extract major name from filename
 # e.g., "glossary_of_AI.csv" -> "AI"
@@ -53,6 +54,15 @@ extract_major() {
     esac
 }
 
+# Function to extract major slug (directory name) from filename
+# e.g., "glossary_of_AI.csv" -> "AI"
+#       "glossary_of_cs.csv" -> "cs"
+#       "glossary_of_stats.csv" -> "stats"
+extract_major_slug() {
+    local filename=$(basename "$1" .csv)
+    echo "$filename" | sed 's/glossary_of_//'
+}
+
 # Process each CSV file in the data directory
 echo "Starting to process CSV files in $DATA_DIR..."
 echo ""
@@ -66,30 +76,55 @@ for csv_file in "$DATA_DIR"/*.csv; do
     
     filename=$(basename "$csv_file")
     major=$(extract_major "$filename")
+    major_slug=$(extract_major_slug "$filename")
     
-    # Determine output file
-    if [ -n "$OUTPUT_FILE" ]; then
-        output_path="$SCRIPT_DIR/$OUTPUT_FILE"
-    else
-        # Create output filename based on input filename
-        output_filename=$(basename "$csv_file" .csv)_results.jsonl
-        output_path="$SCRIPT_DIR/data/judged_dataset/$output_filename"
-    fi
+    # Judged dataset output path
+    judged_dir="$SCRIPT_DIR/data/judged_dataset"
+    mkdir -p "$judged_dir"
+    judged_output_filename="$(basename "$csv_file" .csv)_results.jsonl"
+    judged_output_path="$judged_dir/$judged_output_filename"
     
     echo "Processing: $filename"
     echo "  Major: $major"
-    echo "  Output: $output_path"
+    echo "  Judged output: $judged_output_path"
     echo ""
     
-    # Run the Python script
-    python "$PYTHON_SCRIPT" --major "$major" --input "$csv_file" --output "$output_path"
+    # Run the judging step (scores only)
+    python "$PYTHON_SCRIPT" --major "$major" --input "$csv_file" --output "$judged_output_path"
     
-    if [ $? -eq 0 ]; then
-        echo "✅ Successfully processed $filename"
-    else
+    if [ $? -ne 0 ]; then
         echo "❌ Error processing $filename"
+        echo ""
+        continue
     fi
+    echo "✅ Judged: $filename"
     echo ""
+
+    # Response generation step for each prompt variant
+    for variant in "${PROMPT_VARIANTS[@]}"; do
+        prompt_file="$PROMPT_DIR/$variant.json"
+        response_dir="$SCRIPT_DIR/data/response_dataset/$variant"
+        mkdir -p "$response_dir"
+        response_output_filename="$(basename "$csv_file" .csv)_explanations.jsonl"
+        response_output_path="$response_dir/$response_output_filename"
+
+        echo "Generating responses ($variant):"
+        echo "  Input (judged): $judged_output_path"
+        echo "  Prompt: $prompt_file"
+        echo "  Output (responses): $response_output_path"
+        echo ""
+
+        # Provide the original CSV so response generator can infer terms/major if missing
+        # Use --no-tag so the filename is not suffixed with the prompt tag; variant is represented by folder
+        python "$RESPONSE_SCRIPT" --input "$judged_output_path" --output "$response_output_path" --csv "$csv_file" --prompt-file "$prompt_file" --no-tag
+
+        if [ $? -eq 0 ]; then
+            echo "✅ Responses generated for $filename ($variant)"
+        else
+            echo "❌ Error generating responses for $filename ($variant)"
+        fi
+        echo ""
+    done
 done
 
 echo "All CSV files processed!"

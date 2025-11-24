@@ -128,28 +128,43 @@ def pairwise_judge_with_retry(major: str, term: str, explanation_a: str, explana
     return judgment
 
 def extract_prompt_name(file_path: str):
-    """Extract prompt name from filename (e.g., 'baseline' from 'top_explanations_AI__baseline.jsonl')"""
+    """
+    Extract prompt name from parent directory (variant), e.g.:
+    data/response_dataset/baseline/glossary_of_AI_explanations.jsonl -> 'baseline'
+    Falls back to filename-based extraction if needed.
+    """
+    parent = os.path.basename(os.path.dirname(file_path))
+    if parent and parent != "response_dataset":
+        return parent
     filename = os.path.basename(file_path)
     if "__" in filename:
         parts = filename.split("__")
         if len(parts) > 1:
-            prompt_part = parts[1].replace(".jsonl", "")
-            return prompt_part
+            return parts[1].replace(".jsonl", "")
     return os.path.splitext(filename)[0]
 
-def find_jsonl_files(directory: str):
-    """Find all JSONL files in the specified directory"""
+def find_jsonl_files_recursive(directory: str):
+    """Recursively find all JSONL files under the specified directory"""
     jsonl_files = []
     if not os.path.exists(directory):
         print(f"Error: Directory '{directory}' not found.")
         return jsonl_files
-    
-    for filename in os.listdir(directory):
-        if filename.endswith('.jsonl'):
-            file_path = os.path.join(directory, filename)
-            jsonl_files.append(file_path)
-    
+    for root, _, files in os.walk(directory):
+        for filename in files:
+            if filename.endswith(".jsonl"):
+                jsonl_files.append(os.path.join(root, filename))
     return sorted(jsonl_files)
+
+def extract_major_slug_from_filename(file_path: str):
+    """
+    Extract major slug from filename like 'glossary_of_AI_explanations.jsonl' -> 'AI'
+    Returns None if pattern doesn't match.
+    """
+    base = os.path.basename(file_path)
+    if base.startswith("glossary_of_") and "_explanations" in base:
+        middle = base[len("glossary_of_") : base.find("_explanations")]
+        return middle
+    return None
 
 def combine_judgments(judgment_ab, judgment_ba):
     """
@@ -373,7 +388,7 @@ def evaluate_explanations(file_paths: list, output_path: str):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Evaluate explanations from multiple prompt files using pairwise comparison")
     parser.add_argument("--files", type=str, nargs="+", default=None,
-                       help="Paths to JSONL files containing explanations (optional, defaults to all JSONL files in response_dataset folder)")
+                       help="Paths to JSONL files containing explanations (optional). If omitted, scans response_dataset recursively and groups by major.")
     parser.add_argument("--response-dataset", type=str, default="data/response_dataset",
                        help="Directory containing JSONL files with explanations (default: data/response_dataset)")
     parser.add_argument("--output", type=str, default="result/evaluation_results.jsonl",
@@ -381,25 +396,40 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    # If files not specified, find all JSONL files in response_dataset folder
+    # If files not specified, find all JSONL files recursively and group by major slug
     if args.files is None:
-        print(f"Finding JSONL files in '{args.response_dataset}'...")
-        file_paths = find_jsonl_files(args.response_dataset)
-        
-        if not file_paths:
+        print(f"Finding JSONL files recursively under '{args.response_dataset}'...")
+        all_paths = find_jsonl_files_recursive(args.response_dataset)
+        if not all_paths:
             print(f"Error: No JSONL files found in '{args.response_dataset}'")
             sys.exit(1)
-        
-        print(f"Found {len(file_paths)} JSONL files:")
-        for file_path in file_paths:
-            print(f"  - {os.path.basename(file_path)}")
-        print("")
+        print(f"Found {len(all_paths)} JSONL files total.")
+        # Group by major slug
+        grouped = {}
+        for p in all_paths:
+            slug = extract_major_slug_from_filename(p)
+            if not slug:
+                # Skip non-matching files
+                continue
+            grouped.setdefault(slug, []).append(p)
+        if not grouped:
+            print("Error: No matching explanation files (glossary_of_*_explanations.jsonl) found.")
+            sys.exit(1)
+        # Evaluate each group (require at least 2 variants)
+        for slug, paths in grouped.items():
+            group_paths = sorted(paths)
+            print(f"\nEvaluating major '{slug}' with {len(group_paths)} files:")
+            for fp in group_paths:
+                print(f"  - {fp}")
+            if len(group_paths) < 2:
+                print(f"Skipping '{slug}' (need at least 2 files to compare).")
+                continue
+            evaluate_explanations(group_paths, args.output)
+        print(f"\n✅ All group evaluations written to: {args.output}")
     else:
         file_paths = args.files
-    
-    if len(file_paths) < 2:
-        print("Error: Need at least 2 files to compare.")
-        sys.exit(1)
-    
-    evaluate_explanations(file_paths, args.output)
+        if len(file_paths) < 2:
+            print("Error: Need at least 2 files to compare.")
+            sys.exit(1)
+        evaluate_explanations(file_paths, args.output)
 

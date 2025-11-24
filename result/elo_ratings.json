@@ -1,24 +1,24 @@
 {
   "elo_ratings": {
-    "baseline": 1502.69,
-    "level2_multi_aspect": 1689.43,
-    "level3_multi_perspective": 1307.88
+    "baseline": 1531.49,
+    "level2_multi_aspect": 1789.71,
+    "level3_multi_perspective": 1178.8
   },
   "ranking": [
     {
       "rank": 1,
       "Prompt": "level2_multi_aspect",
-      "elo": 1689.43
+      "elo": 1789.71
     },
     {
       "rank": 2,
       "Prompt": "baseline",
-      "elo": 1502.69
+      "elo": 1531.49
     },
     {
       "rank": 3,
       "Prompt": "level3_multi_perspective",
-      "elo": 1307.88
+      "elo": 1178.8
     }
   ]
 }
