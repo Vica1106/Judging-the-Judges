@@ -217,7 +217,7 @@ def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process JSONL results and generate explanations for top N terms")
-    parser.add_argument("--input", type=str, default="judged_dataset/glossary_of_AI_results_top10.jsonl", help="Path to input JSONL file from data_filter.py")
+    parser.add_argument("--input", type=str, default="data/judged_dataset/glossary_of_AI_results_top10.jsonl", help="Path to input JSONL file from data_filter.py")
     parser.add_argument("--output", type=str, default="response_dataset/top_explanations_AI.jsonl", help="Path to output JSONL file (default: top_explanations.jsonl)")
     parser.add_argument("--top", type=int, default=10, help="Number of top terms to process (default: 10)")
     parser.add_argument("--prompt-file", type=str, default="prompts/baseline.json", help="Path to prompt file (JSON with 'prompt' key or plain text).")
