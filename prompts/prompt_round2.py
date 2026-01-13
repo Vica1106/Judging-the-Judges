@@ -139,7 +139,7 @@ def main():
     ap.add_argument("--prompt_dir", default="prompts")
     ap.add_argument("--out_dir", default="prompts/round2")
     ap.add_argument("--model", default="gpt-5-nano-2025-08-07")
-    ap.add_argument("--max_losses_per_prompt", type=int, default=20,
+    ap.add_argument("--max_losses_per_prompt", type=int, default=0,
                     help="Cap loss-case feedback blocks per prompt family. 0 = no cap.")
     args = ap.parse_args()
 
