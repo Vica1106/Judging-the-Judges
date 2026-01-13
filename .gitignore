@@ -1,0 +1,15 @@
+# ===== Generated datasets =====
+data/response_dataset/
+data/judged_dataset/*_top*.jsonl
+
+# ===== Evaluation outputs =====
+result/
+
+# ===== Round2 generated prompt files =====
+prompts/round2/*.json
+
+# ===== OS / editor junk =====
+.DS_Store
+__pycache__/
+*.pyc
+.vscode/

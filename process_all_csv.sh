@@ -90,7 +90,7 @@ for csv_file in "$DATA_DIR"/*.csv; do
     echo ""
     
     # Run the judging step (scores only)
-    python "$PYTHON_SCRIPT" --major "$major" --input "$csv_file" --output "$judged_output_path"
+    python3 "$PYTHON_SCRIPT" --major "$major" --input "$csv_file" --output "$judged_output_path"
     
     if [ $? -ne 0 ]; then
         echo "❌ Error processing $filename"
@@ -116,7 +116,7 @@ for csv_file in "$DATA_DIR"/*.csv; do
 
         # Provide the original CSV so response generator can infer terms/major if missing
         # Use --no-tag so the filename is not suffixed with the prompt tag; variant is represented by folder
-        python "$RESPONSE_SCRIPT" --input "$judged_output_path" --output "$response_output_path" --csv "$csv_file" --prompt-file "$prompt_file" --no-tag
+        python3 "$RESPONSE_SCRIPT" --input "$judged_output_path" --output "$response_output_path" --csv "$csv_file" --prompt-file "$prompt_file" --no-tag
 
         if [ $? -eq 0 ]; then
             echo "✅ Responses generated for $filename ($variant)"
