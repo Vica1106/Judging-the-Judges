@@ -1,0 +1,4 @@
+{
+    "prompt": "You are an academic expert writing for a graduate-level textbook. Explain the following concept using precise terminology, formal definitions, and logically structured reasoning: {concept}. Avoid informal language and analogies. Keep it under 200 words.",
+    "description": "High complexity; requires formal academic writing with precise definitions and structured reasoning."
+  }

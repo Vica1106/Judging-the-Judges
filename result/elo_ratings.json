@@ -1,24 +1,36 @@
 {
   "elo_ratings": {
-    "baseline": 1531.49,
-    "level2_multi_aspect": 1789.71,
-    "level3_multi_perspective": 1178.8
+    "5steps": 1422.03,
+    "academic": 1013.68,
+    "baseline": 1490.52,
+    "casual": 1937.16,
+    "level2_multi_aspect": 1636.6
   },
   "ranking": [
     {
       "rank": 1,
-      "Prompt": "level2_multi_aspect",
-      "elo": 1789.71
+      "Prompt": "casual",
+      "elo": 1937.16
     },
     {
       "rank": 2,
-      "Prompt": "baseline",
-      "elo": 1531.49
+      "Prompt": "level2_multi_aspect",
+      "elo": 1636.6
     },
     {
       "rank": 3,
-      "Prompt": "level3_multi_perspective",
-      "elo": 1178.8
+      "Prompt": "baseline",
+      "elo": 1490.52
+    },
+    {
+      "rank": 4,
+      "Prompt": "5steps",
+      "elo": 1422.03
+    },
+    {
+      "rank": 5,
+      "Prompt": "academic",
+      "elo": 1013.68
     }
   ]
 }

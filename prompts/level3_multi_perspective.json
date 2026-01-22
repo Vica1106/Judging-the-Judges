@@ -1,5 +1,0 @@
-{
-    "prompt": "Provide a comprehensive explanation of the concept {concept}. Your explanation should integrate multiple perspectives, including: (1) an intuitive perspective that conveys the core idea, (2) a formal perspective with a precise definition or theoretical framing, (3) a practical perspective describing where or how it appears in real applications, and (4) any relevant background knowledge or related concepts that help deepen understanding. Conclude with a short analogy that ties the perspectives together. Please keep the entire explanation under 200 words.",
-    "description": "High complexity; multi-perspective explanation requiring integration of intuition, formal theory, practical relevance, and related background knowledge."
-  }
-  
