@@ -1,0 +1,7 @@
+{
+  "prompt": "Explain the concept {concept} to a non-expert college student. Use plain, approachable language and one simple, relatable analogy. Present the explanation in three concise parts: (1) the basic idea in one sentence, (2) a brief real-world example in 1–2 sentences, (3) why it matters with a quick takeaway. Keep the total length under 200 words. Use bullets or a short, skimmable paragraph and avoid heavy jargon or formal notation. Do NOT ask questions or propose follow-ups. Do NOT reveal chain-of-thought.",
+  "description": "Round2 optimized generation prompt for level2_multi_aspect, derived from Round1 evaluation feedback.",
+  "base_prompt": "prompts/level2_multi_aspect.json",
+  "meta_model": "gpt-5-nano-2025-08-07",
+  "loss_examples_used": 70
+}
