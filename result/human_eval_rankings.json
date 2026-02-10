@@ -1,0 +1,66 @@
+{
+  "averages": {
+    "baseline": 5.410714285714286,
+    "level2_multi_aspect": 6.803571428571429,
+    "5steps": 5.982142857142857,
+    "casual": 6.633928571428571,
+    "academic": 1.1339285714285714,
+    "baseline_round2": 7.125,
+    "level2_multi_aspect_round2": 6.607142857142857,
+    "5step_round2": 5.723214285714286,
+    "casual_round2": 6.1875,
+    "academic_round2": 3.375
+  },
+  "ranking": [
+    {
+      "prompt": "baseline_round2",
+      "average": 7.125,
+      "rank": 1
+    },
+    {
+      "prompt": "level2_multi_aspect",
+      "average": 6.803571428571429,
+      "rank": 2
+    },
+    {
+      "prompt": "casual",
+      "average": 6.633928571428571,
+      "rank": 3
+    },
+    {
+      "prompt": "level2_multi_aspect_round2",
+      "average": 6.607142857142857,
+      "rank": 4
+    },
+    {
+      "prompt": "casual_round2",
+      "average": 6.1875,
+      "rank": 5
+    },
+    {
+      "prompt": "5steps",
+      "average": 5.982142857142857,
+      "rank": 6
+    },
+    {
+      "prompt": "5step_round2",
+      "average": 5.723214285714286,
+      "rank": 7
+    },
+    {
+      "prompt": "baseline",
+      "average": 5.410714285714286,
+      "rank": 8
+    },
+    {
+      "prompt": "academic_round2",
+      "average": 3.375,
+      "rank": 9
+    },
+    {
+      "prompt": "academic",
+      "average": 1.1339285714285714,
+      "rank": 10
+    }
+  ]
+}
