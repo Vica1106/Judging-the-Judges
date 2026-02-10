@@ -1,0 +1,7 @@
+{
+  "prompt": "Explain the following concept to a non-specialist college student in plain language. Use a concise, scaffolded structure to build intuition quickly, and keep the total length under 200 words. Do not reveal or output chain-of-thought, and do not request interaction.\n\n1) Start with a simple, concrete everyday analogy that grounds the idea.\n2) Provide a brief, plain-language definition of the concept (define any essential term in simple words in parentheses).\n3) Offer a one- to two-sentence intuition that connects the idea to familiar concepts.\n4) Give one clear, concrete example or mini-step-by-step illustration showing the concept in action (prefer a general, non-technical context or a relatable AI tie-in).\n5) End with a succinct Takeaway: why it matters and one common pitfall to avoid.\n\n{concept}",
+  "description": "Round2 optimized generation prompt for baseline, derived from Round1 evaluation feedback.",
+  "base_prompt": "prompts/baseline.json",
+  "meta_model": "gpt-5-nano-2025-08-07",
+  "loss_examples_used": 124
+}

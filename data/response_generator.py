@@ -109,6 +109,22 @@ def _load_terms_from_csv(csv_path: str):
             terms.append(row[term_idx].strip())
     return terms
 
+def get_processed_terms_from_output(output_path: str):
+    """Read existing output file and return set of already processed terms"""
+    processed_terms = set()
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    if line.strip():
+                        entry = json.loads(line.strip())
+                        term = entry.get("Term", "")
+                        if term:
+                            processed_terms.add(term)
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"Warning: Could not read existing output file: {e}")
+    return processed_terms
+
 def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int = 10, prompt_template: str = "", csv_path: str = ""):
     """Read JSONL results, find top N by average score, and generate explanations"""
     top_k_filename = generate_top_k_filename(jsonl_path, top_n)
@@ -195,11 +211,43 @@ def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int 
     # Get major from first entry (may be inferred earlier)
     major = top_entries[0].get("Major", "")
     
+    # Check for already processed terms in output file
+    processed_terms = get_processed_terms_from_output(output_path)
+    if processed_terms:
+        print(f"Found {len(processed_terms)} already processed terms in output file. Skipping those...")
+        print("")
+    
     # Generate explanations for top entries
     os.makedirs(os.path.dirname(output_path) or ".", exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
+    
+    # Load existing entries to preserve them
+    existing_entries = {}
+    if os.path.exists(output_path):
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    if line.strip():
+                        entry = json.loads(line.strip())
+                        term = entry.get("Term", "")
+                        if term:
+                            existing_entries[term] = entry
+        except (json.JSONDecodeError, IOError):
+            pass
+    
+    skipped_count = 0
+    processed_count = 0
+    
+    # Use append mode to add new entries
+    with open(output_path, "a", encoding="utf-8") as f:
         for entry in top_entries:
             term = entry.get("Term", "")
+            
+            # Skip if already processed
+            if term in processed_terms:
+                skipped_count += 1
+                print(f"⏭️  Skipped (already processed): {term}")
+                continue
+            
             # Format the system prompt per term, replacing {concept} if present
             formatted_system_prompt = (prompt_template or "Explain the major term for me as short as possible.").replace("{concept}", term)
             result = LLM_Judge(major, term, formatted_system_prompt)
@@ -214,10 +262,13 @@ def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int 
             f.write(json.dumps(output_entry, ensure_ascii=False) + "\n")
             print(f"✅ Processed: {term}")
             print("")
+            processed_count += 1
+    
+    print(f"\nSummary: {processed_count} new entries processed, {skipped_count} skipped, {len(top_entries)} total in top {top_n}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process JSONL results and generate explanations for top N terms")
-    parser.add_argument("--input", type=str, default="judged_dataset/glossary_of_AI_results_top10.jsonl", help="Path to input JSONL file from data_filter.py")
+    parser.add_argument("--input", type=str, default="data/judged_dataset/glossary_of_AI_results_top10.jsonl", help="Path to input JSONL file from data_filter.py")
     parser.add_argument("--output", type=str, default="response_dataset/top_explanations_AI.jsonl", help="Path to output JSONL file (default: top_explanations.jsonl)")
     parser.add_argument("--top", type=int, default=10, help="Number of top terms to process (default: 10)")
     parser.add_argument("--prompt-file", type=str, default="prompts/baseline.json", help="Path to prompt file (JSON with 'prompt' key or plain text).")

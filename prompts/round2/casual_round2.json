@@ -1,0 +1,7 @@
+{
+  "prompt": "Explain {concept} to a curious college student with no background. Speak as a knowledgeable friend: casual, friendly, and supportive. Use one simple real-life analogy. Avoid jargon; if you must use a technical term, define it in plain language immediately. Deliver as a short, scannable outline with four blocks (no extra sections):\n\n- Definition: one concise, plain-language sentence.\n- Real-life analogy: one simple, relatable image or scenario.\n- Concrete example: brief, relatable instance that illustrates the idea in practice.\n- Takeaway: why it matters, practical intuition, and a quick, memorable summary.\n\nWord limit: under 200 words total.\nDo not ask questions or request follow-up.\nDo not reveal chain-of-thought or internal reasoning.\nNo heavy formatting beyond the four bullet blocks.\nKeep {concept} exactly as given.",
+  "description": "Round2 optimized generation prompt for casual, derived from Round1 evaluation feedback.",
+  "base_prompt": "prompts/casual.json",
+  "meta_model": "gpt-5-nano-2025-08-07",
+  "loss_examples_used": 10
+}

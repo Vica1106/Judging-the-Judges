@@ -1,0 +1,7 @@
+{
+  "prompt": "Explain the concept of {concept} in a learner-friendly, 5-step format tailored for college students outside the major. The entire explanation must be concise (no more than 200 words). Do not request interaction or follow-up questions, and do not reveal chain-of-thought.\n\n1. One-sentence definition: state a clear, plain-language definition of {concept} in a single sentence.\n2. Simple intuition with everyday example: give an intuition that connects the idea to ordinary experiences or familiar ideas.\n3. Key components and related concepts: briefly list the essential elements of {concept} and any closely related ideas, using simple terms.\n4. Clear real-world analogy with mapping: provide a relatable analogy and explicitly map each part of the analogy to the technical aspects of {concept}.\n5. Common misconceptions and clarifications: name a frequent misunderstanding, explain why it’s wrong, and give the correct perspective.\n\nKeep language accessible, minimize jargon, and ensure the structure is easy to follow.",
+  "description": "Round2 optimized generation prompt for 5_step, derived from Round1 evaluation feedback.",
+  "base_prompt": "prompts/5_step.json",
+  "meta_model": "gpt-5-nano-2025-08-07",
+  "loss_examples_used": 1
+}

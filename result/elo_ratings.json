@@ -1,24 +1,66 @@
 {
   "elo_ratings": {
-    "baseline": 1531.49,
-    "level2_multi_aspect": 1789.71,
-    "level3_multi_perspective": 1178.8
+    "5steps": 1295.8,
+    "academic": 756.23,
+    "baseline": 1436.33,
+    "casual": 1933.7,
+    "level2_multi_aspect": 1614.65,
+    "5step_round2": 1486.98,
+    "Highly_formal_academic_round2": 998.59,
+    "baseline_round2": 1583.77,
+    "casual_round2": 1939.7,
+    "level2_multi_aspect_round2": 1954.26
   },
   "ranking": [
     {
       "rank": 1,
-      "Prompt": "level2_multi_aspect",
-      "elo": 1789.71
+      "Prompt": "level2_multi_aspect_round2",
+      "elo": 1954.26
     },
     {
       "rank": 2,
-      "Prompt": "baseline",
-      "elo": 1531.49
+      "Prompt": "casual_round2",
+      "elo": 1939.7
     },
     {
       "rank": 3,
-      "Prompt": "level3_multi_perspective",
-      "elo": 1178.8
+      "Prompt": "casual",
+      "elo": 1933.7
+    },
+    {
+      "rank": 4,
+      "Prompt": "level2_multi_aspect",
+      "elo": 1614.65
+    },
+    {
+      "rank": 5,
+      "Prompt": "baseline_round2",
+      "elo": 1583.77
+    },
+    {
+      "rank": 6,
+      "Prompt": "5step_round2",
+      "elo": 1486.98
+    },
+    {
+      "rank": 7,
+      "Prompt": "baseline",
+      "elo": 1436.33
+    },
+    {
+      "rank": 8,
+      "Prompt": "5steps",
+      "elo": 1295.8
+    },
+    {
+      "rank": 9,
+      "Prompt": "Highly_formal_academic_round2",
+      "elo": 998.59
+    },
+    {
+      "rank": 10,
+      "Prompt": "academic",
+      "elo": 756.23
     }
   ]
 }
