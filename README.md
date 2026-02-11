@@ -16,15 +16,13 @@ bash run_evaluation.sh
 What happens:
 - Judged outputs are written to `data/judged_dataset/*.jsonl`
 - Explanations are generated for three prompt variants and saved under:
-  - `data/response_dataset/baseline/`
-  - `data/response_dataset/level2_multi_aspect/`
-  - `data/response_dataset/level3_multi_perspective/`
+  - `data/response_dataset/<prompt_name>/`
 - Pairwise evaluation results go to `result/evaluation_results.jsonl`
 - Elo rankings go to `result/elo_ratings.json`
 
 Requirements:
 - A `.env` file with your API keys (e.g., `OPENAI_API_KEY=...`)
-- Prompt files in `prompts/` (`baseline.json`, `level2_multi_aspect.json`, `level3_multi_perspective.json`)
+- Prompt files in `prompts/` (e.g., `baseline.json`, `level2_multi_aspect.json`, `level3_multi_perspective.json`, `5_step.json`)
 - CSVs to process in `data/raw_data/` (e.g., `glossary_of_AI.csv`, `glossary_of_cs.csv`, `glossary_of_stats.csv`)
 
 ## Scrape a Wikipedia glossary to CSV
@@ -250,3 +248,39 @@ python analyze_evaluation.py --input result/evaluation_results.jsonl --output re
 - Overall prompt performance (wins, losses, ties, win rate)
 - Terms with most disagreements
 - Elo ratings and final ranking
+
+## Round2 Prompt Optimization
+
+In addition to the base pipeline, we introduce a second refinement cycle that leverages judge feedback from the first evaluation round to improve prompt design.
+
+The round2 process follows this loop:
+
+1. Generate explanations using base prompts
+2. Run pairwise evaluation and collect judge feedback
+3. Identify recurring weaknesses and structural issues
+4. Refine prompt instructions
+5. Regenerate explanations and re-evaluate 
+
+This transforms the pipeline from a single-pass evaluation into an iterative prompt optimization framework.
+
+---
+
+### 1) Generate Round2 Explanations
+
+Run:
+
+```bash
+bash generate_r2_responses.sh
+```
+
+This script uses refined prompt templates (e.g., *_round2), generates new explanations, and ultimately saves outputs to `data/response_dataset/<prompt_name>_round2/`.
+
+### 2) Re-run Evaluation
+
+After generating Round2 explanations, run:
+
+```bash
+bash run_evaluation.sh
+```
+
+The evaluation system automatically detects all prompt variants (including Round1 and Round2), performs full pairwise comparisons, and updates Elo rankings accordingly.
