@@ -1,6 +1,68 @@
 # Judging-the-Judges
 Judging the Judges: Using AI and Humans to Evaluate LLM Explanations
 
+## Installation
+
+### Dependencies
+
+Install all required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+**Key dependencies:**
+- `python-dotenv` - Environment variable management
+- `langfuse` - LLM observability and tracing
+- `openai` - OpenAI API client
+- `pandas` - Data processing and manipulation
+- `requests` & `beautifulsoup4` - Web scraping for Wikipedia glossaries
+- `numpy`, `matplotlib`, `seaborn`, `scikit-learn` - Data analysis and visualization (for notebooks)
+
+### Setup
+
+1. Create a `.env` file in the project root with your API keys:
+   ```bash
+   OPENAI_API_KEY=sk-...
+   LANGFUSE_PUBLIC_KEY=...
+   LANGFUSE_SECRET_KEY=...
+   ```
+
+2. Ensure prompt files are in the `prompts/` directory
+3. Place CSV files to process in `data/raw_data/`
+
+## Project Structure
+
+```
+Judging-the-Judges/
+├── analyze/                          # Analysis scripts and notebooks
+│   ├── analyze_evaluation.py        # Calculate Elo ratings from evaluation results
+│   ├── evaluate_explanations.py     # Pairwise comparison of explanations
+│   ├── analysis.ipynb                # Analysis notebook
+│   └── Jessie_da.ipynb              # Data analysis notebook
+├── data/
+│   ├── data_filter.py               # Judge concept difficulty using LLM
+│   ├── response_generator.py        # Generate explanations using different prompts
+│   ├── judged_dataset/              # Output: judged concept difficulty scores
+│   ├── raw_data/                    # Input: CSV files with glossary terms
+│   │   └── getDataFromWiki.py      # Scrape Wikipedia glossaries to CSV
+│   └── response_dataset/            # Output: generated explanations per prompt variant
+├── prompts/                         # Prompt templates
+│   ├── baseline.json                # Baseline prompt template
+│   ├── level2_multi_aspect.json    # Multi-aspect prompt template
+│   ├── round2/                      # Refined Round2 prompt templates
+│   └── prompt_round2.py             # Generate Round2 prompts from feedback
+├── result/                          # Evaluation results
+│   ├── evaluation_results.jsonl     # Pairwise comparison results
+│   ├── elo_ratings.json            # Final Elo rankings
+│   └── human_eval_rankings.json    # Human evaluation rankings
+├── process_all_csv.sh               # Process all CSVs and generate responses
+├── run_evaluation.sh                # Run pairwise evaluation and Elo calculation
+├── generate_r2_responses.sh         # Generate Round2 explanations
+├── requirements.txt                 # Python dependencies
+└── README.md                        # This file
+```
+
 ## Quick start: Run the full pipeline with shell scripts
 
 You can run the entire pipeline with two commands from the repo root:
@@ -20,91 +82,102 @@ What happens:
 - Pairwise evaluation results go to `result/evaluation_results.jsonl`
 - Elo rankings go to `result/elo_ratings.json`
 
-Requirements:
+**Prerequisites:**
+- Python dependencies installed (see [Installation](#installation) section above)
 - A `.env` file with your API keys (e.g., `OPENAI_API_KEY=...`)
 - Prompt files in `prompts/` (e.g., `baseline.json`, `level2_multi_aspect.json`, `level3_multi_perspective.json`, `5_step.json`)
 - CSVs to process in `data/raw_data/` (e.g., `glossary_of_AI.csv`, `glossary_of_cs.csv`, `glossary_of_stats.csv`)
 
 ## Scrape a Wikipedia glossary to CSV
 
-Use the script in 'data/getDataFromWiki.py' to fetch a glossary page from Wikipedia and save it as a CSV.
+Use the script in `data/raw_data/getDataFromWiki.py` to fetch a glossary page from Wikipedia and save it as a CSV.
 
 ### 1) Install dependencies
 
-'''bash
+If you haven't already, install dependencies from `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+Or install just the scraping dependencies:
+
+```bash
 pip3 install requests beautifulsoup4 pandas
-'''
+```
 
 ### 2) Choose the glossary URL
 
-Edit the 'url' variable near the top of 'data/getDataFromWiki.py' to the glossary you want:
+Edit the `url` variable near the top of `data/raw_data/getDataFromWiki.py` to the glossary you want:
 
-'''python
+```python
 url = "https://en.wikipedia.org/wiki/Glossary_of_computer_science"
-'''
+```
 
 Examples you can use:
 - 'https://en.wikipedia.org/wiki/Glossary_of_artificial_intelligence'
 - 'https://en.wikipedia.org/wiki/Glossary_of_computer_science'
 - 'https://en.wikipedia.org/wiki/Glossary_of_statistics'
 
-Optional: change the output filename by editing the 'to_csv' line at the bottom of the script:
+Optional: change the output filename by editing the `to_csv` line at the bottom of the script:
 
-'''python
+```python
 df.to_csv("glossary_of_cs.csv", index=False, encoding="utf-8")
-'''
+```
 
 ### 3) Run the scraper
 
-Run from the 'data/' folder so the CSV is saved next to the script:
+Run from the `data/raw_data/` folder so the CSV is saved next to the script:
 
-'''bash
-cd data
+```bash
+cd data/raw_data
 python3 getDataFromWiki.py
-'''
+```
 
 You should see a message like:
 
-'''
+```
 ✅ Found 300 concepts
 💾 Saved to glossary_of_cs.csv
-'''
+```
 
-The resulting file will be in 'data/' (e.g., 'data/glossary_of_cs.csv').
+The resulting file will be in `data/raw_data/` (e.g., `data/raw_data/glossary_of_cs.csv`).
 
-## Check concept difficulty with 'data_filter.py'
+## Check concept difficulty with `data_filter.py`
 
-This script uses an LLM judge to score how difficult each concept is for non-majors and writes results to 'results.jsonl'.
+This script uses an LLM judge to score how difficult each concept is for non-majors and writes results to `data/judged_dataset/*_results.jsonl`.
 
 ### 1) Install judge dependencies
 
-'''bash
-pip3 install pandas python-dotenv langfuse openai
-'''
+All dependencies are included in `requirements.txt`. Install with:
+
+```bash
+pip install -r requirements.txt
+```
 
 ### 2) Set your API keys in a '.env' file
 
-Create a '.env' in the project root with at least your OpenAI key:
+Create a `.env` file in the project root with at least your OpenAI key:
 
-'''bash
+```bash
 echo "OPENAI_API_KEY=sk-..." > .env
-'''
+```
 
 ### 3) Get Score for each concept
 
-Edit the inputs at the bottom of 'data_filter.py' to choose the major and CSV path, then run it:
+Edit the inputs at the bottom of `data/data_filter.py` to choose the major and CSV path, or use command-line arguments:
 
 Run:
 
-'''bash
-python3 data_filter.py
-'''
+```bash
+python3 data/data_filter.py --major "Computer Science" --input data/raw_data/glossary_of_cs.csv --output data/judged_dataset/glossary_of_cs_results.jsonl
+```
 
-This appends JSON lines to 'results.jsonl', one per concept (first few rows by default). Example entry:
+This writes JSON lines to the output file, one per concept. Example entry:
 
-'''json
+```json
 {"Major":"Physics","Term":"Lagrangian","Specialization":8,"Complexity":9,"Familiarity":7,"Explainability":7,"Interdisciplinary_Reach":6,"Cognitive_Load":9,"Overall Assessment":"..."}
-'''
+```
 
 ## Generate Explanations with Different Prompts
 
@@ -120,7 +193,7 @@ Use `response_generator.py` to generate explanations for the top-k most difficul
 
 **Run:**
 ```bash
-python response_generator.py --input data/judged_dataset/glossary_of_AI_results_top10.jsonl --prompt-file prompts/baseline.json --output data/response_dataset/top_explanations_AI.jsonl
+python data/response_generator.py --input data/judged_dataset/glossary_of_AI_results_top10.jsonl --prompt-file prompts/baseline.json --output data/response_dataset/baseline/glossary_of_AI_explanations.jsonl
 ```
 
 **What it does:**
@@ -155,10 +228,10 @@ bash run_evaluation.sh
 Or run manually:
 ```bash
 # Step 1: Run pairwise evaluation
-python evaluate_explanations.py --output result/evaluation_results.jsonl
+python analyze/evaluate_explanations.py --output result/evaluation_results.jsonl
 
 # Step 2: Analyze results and calculate Elo ratings
-python analyze_evaluation.py --input result/evaluation_results.jsonl --output result/elo_ratings.json
+python analyze/analyze_evaluation.py --input result/evaluation_results.jsonl --output result/elo_ratings.json
 ```
 
 **What it does:**
