@@ -1,0 +1,34 @@
+
+================================================================================
+Log started at: 2026-03-03 17:54:08
+================================================================================
+
+Logging to: utils/logger\response_generator_20260303_175408.log
+Script: response_generator
+--------------------------------------------------------------------------------
+Looking for existing top 10 file at: C:/Users/jessi/OneDrive/Documents/GitHub/Judging-the-Judges/data/judged_dataset/glossary_of_cs_results_top10.jsonl
+✅ Found existing top 10 file: C:/Users/jessi/OneDrive/Documents/GitHub/Judging-the-Judges/data/judged_dataset/glossary_of_cs_results_top10.jsonl
+Using existing file instead of re-running selection process...
+
+Loaded 10 entries from existing file.
+
+Found 10 already processed terms in output file. Skipping those...
+
+⏭️  Skipped (already processed): quantum computing
+⏭️  Skipped (already processed): big O notation
+⏭️  Skipped (already processed): semantics
+⏭️  Skipped (already processed): floating-point arithmetic
+⏭️  Skipped (already processed): quicksort
+⏭️  Skipped (already processed): agent-based model (ABM)
+⏭️  Skipped (already processed): big data
+⏭️  Skipped (already processed): class
+⏭️  Skipped (already processed): coding theory
+⏭️  Skipped (already processed): computability theory
+
+Summary: 0 new entries processed, 10 skipped, 10 total in top 10
+✅ Script completed successfully
+
+================================================================================
+Log ended at: 2026-03-03 17:54:08
+================================================================================
+

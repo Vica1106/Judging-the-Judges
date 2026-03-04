@@ -152,10 +152,11 @@ def main():
         "casual": os.path.join(args.prompt_dir, "casual.json"),
         "Highly_formal_academic": os.path.join(args.prompt_dir, "Highly_formal_academic.json"),
     }
+    # Round 2 optimized prompt file names (include updated 5steps_round2 + Highly_formal_academic naming)
     out_paths = {
         "baseline": os.path.join(args.out_dir, "baseline_round2.json"),
         "level2_multi_aspect": os.path.join(args.out_dir, "level2_multi_aspect_round2.json"),
-        "5_step": os.path.join(args.out_dir, "5step_round2.json"),
+        "5_step": os.path.join(args.out_dir, "5steps_round2.json"),
         "casual": os.path.join(args.out_dir, "casual_round2.json"),
         "Highly_formal_academic": os.path.join(args.out_dir, "Highly_formal_academic_round2.json"),
     }

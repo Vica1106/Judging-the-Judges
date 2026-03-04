@@ -1,0 +1,48 @@
+
+================================================================================
+Log started at: 2026-03-03 18:06:14
+================================================================================
+
+Logging to: utils/logger\evaluate_explanations_20260303_180614.log
+Script: evaluate_explanations
+--------------------------------------------------------------------------------
+Finding JSONL files recursively under 'data/response_dataset'...
+Found 30 JSONL files total.
+
+Evaluating major 'AI' with 10 files:
+  - data/response_dataset\5steps\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\5steps_round2\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\Highly_formal_academic\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\Highly_formal_academic_round2\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\baseline\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\baseline_round2\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\casual\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\casual_round2\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\level2_multi_aspect\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\level2_multi_aspect_round2\glossary_of_AI_explanations.jsonl
+Loading explanation files...
+  Loaded 10 entries from 5steps (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from 5steps_round2 (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from Highly_formal_academic (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from Highly_formal_academic_round2 (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from baseline (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from baseline_round2 (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from casual (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from casual_round2 (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from level2_multi_aspect (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from level2_multi_aspect_round2 (glossary_of_AI_explanations.jsonl)
+
+Found 10 common terms across all files.
+
+Will perform 45 pairwise comparisons per term (with order swapping: 450 total comparisons).
+Each pair will be judged in both orders (A,B and B,A) and results will be combined.
+
+Found 1305 already processed comparisons. Skipping those...
+
+[1306/450] Comparing 5steps vs 5steps_round2 for term: Big O notation
+  Step 1: Judging (5steps, 5steps_round2) order...
+
+================================================================================
+Log ended at: 2026-03-03 18:06:34
+================================================================================
+

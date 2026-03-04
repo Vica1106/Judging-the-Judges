@@ -1,0 +1,396 @@
+
+================================================================================
+Log started at: 2026-03-03 18:14:55
+================================================================================
+
+Logging to: utils/logger\analyze_evaluation_20260303_181455.log
+Script: analyze_evaluation
+--------------------------------------------------------------------------------
+Analysis of Evaluation Results
+============================================================
+Total comparisons: 1305
+
+Results by Comparison Type:
+------------------------------------------------------------
+
+5steps vs Highly_formal_academic:
+  Total: 29
+  A wins: 29 (100.0%)
+  B wins: 0 (0.0%)
+  Ties: 0 (0.0%)
+
+5steps vs Highly_formal_academic_round2:
+  Total: 29
+  A wins: 28 (96.6%)
+  B wins: 0 (0.0%)
+  Ties: 1 (3.4%)
+
+5steps vs baseline:
+  Total: 29
+  A wins: 4 (13.8%)
+  B wins: 10 (34.5%)
+  Ties: 15 (51.7%)
+
+5steps vs baseline_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 26 (89.7%)
+  Ties: 3 (10.3%)
+
+5steps vs casual:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 28 (96.6%)
+  Ties: 1 (3.4%)
+
+5steps vs casual_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+5steps vs level2_multi_aspect:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 23 (79.3%)
+  Ties: 6 (20.7%)
+
+5steps vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+5steps_round2 vs 5steps:
+  Total: 29
+  A wins: 17 (58.6%)
+  B wins: 4 (13.8%)
+  Ties: 8 (27.6%)
+
+5steps_round2 vs Highly_formal_academic:
+  Total: 29
+  A wins: 29 (100.0%)
+  B wins: 0 (0.0%)
+  Ties: 0 (0.0%)
+
+5steps_round2 vs Highly_formal_academic_round2:
+  Total: 29
+  A wins: 28 (96.6%)
+  B wins: 0 (0.0%)
+  Ties: 1 (3.4%)
+
+5steps_round2 vs baseline:
+  Total: 29
+  A wins: 12 (41.4%)
+  B wins: 10 (34.5%)
+  Ties: 7 (24.1%)
+
+5steps_round2 vs baseline_round2:
+  Total: 29
+  A wins: 1 (3.4%)
+  B wins: 19 (65.5%)
+  Ties: 9 (31.0%)
+
+5steps_round2 vs casual:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 25 (86.2%)
+  Ties: 4 (13.8%)
+
+5steps_round2 vs casual_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 27 (93.1%)
+  Ties: 2 (6.9%)
+
+5steps_round2 vs level2_multi_aspect:
+  Total: 29
+  A wins: 2 (6.9%)
+  B wins: 16 (55.2%)
+  Ties: 11 (37.9%)
+
+5steps_round2 vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 26 (89.7%)
+  Ties: 3 (10.3%)
+
+Highly_formal_academic vs baseline:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+Highly_formal_academic vs baseline_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+Highly_formal_academic vs casual:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+Highly_formal_academic vs casual_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+Highly_formal_academic vs level2_multi_aspect:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+Highly_formal_academic vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+Highly_formal_academic_round2 vs Highly_formal_academic:
+  Total: 29
+  A wins: 29 (100.0%)
+  B wins: 0 (0.0%)
+  Ties: 0 (0.0%)
+
+Highly_formal_academic_round2 vs baseline:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 27 (93.1%)
+  Ties: 2 (6.9%)
+
+Highly_formal_academic_round2 vs baseline_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 28 (96.6%)
+  Ties: 1 (3.4%)
+
+Highly_formal_academic_round2 vs casual:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 28 (96.6%)
+  Ties: 1 (3.4%)
+
+Highly_formal_academic_round2 vs casual_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 28 (96.6%)
+  Ties: 1 (3.4%)
+
+Highly_formal_academic_round2 vs level2_multi_aspect:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 28 (96.6%)
+  Ties: 1 (3.4%)
+
+Highly_formal_academic_round2 vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 28 (96.6%)
+  Ties: 1 (3.4%)
+
+baseline vs baseline_round2:
+  Total: 29
+  A wins: 5 (17.2%)
+  B wins: 20 (69.0%)
+  Ties: 4 (13.8%)
+
+baseline vs casual:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 26 (89.7%)
+  Ties: 3 (10.3%)
+
+baseline vs casual_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 28 (96.6%)
+  Ties: 1 (3.4%)
+
+baseline vs level2_multi_aspect:
+  Total: 29
+  A wins: 3 (10.3%)
+  B wins: 20 (69.0%)
+  Ties: 6 (20.7%)
+
+baseline vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 29 (100.0%)
+  Ties: 0 (0.0%)
+
+baseline_round2 vs casual:
+  Total: 29
+  A wins: 3 (10.3%)
+  B wins: 20 (69.0%)
+  Ties: 6 (20.7%)
+
+baseline_round2 vs casual_round2:
+  Total: 29
+  A wins: 2 (6.9%)
+  B wins: 27 (93.1%)
+  Ties: 0 (0.0%)
+
+baseline_round2 vs level2_multi_aspect:
+  Total: 29
+  A wins: 9 (31.0%)
+  B wins: 9 (31.0%)
+  Ties: 11 (37.9%)
+
+baseline_round2 vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 26 (89.7%)
+  Ties: 3 (10.3%)
+
+casual vs casual_round2:
+  Total: 29
+  A wins: 6 (20.7%)
+  B wins: 14 (48.3%)
+  Ties: 9 (31.0%)
+
+casual vs level2_multi_aspect:
+  Total: 29
+  A wins: 24 (82.8%)
+  B wins: 1 (3.4%)
+  Ties: 4 (13.8%)
+
+casual vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 8 (27.6%)
+  B wins: 12 (41.4%)
+  Ties: 9 (31.0%)
+
+casual_round2 vs level2_multi_aspect:
+  Total: 29
+  A wins: 25 (86.2%)
+  B wins: 1 (3.4%)
+  Ties: 3 (10.3%)
+
+casual_round2 vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 12 (41.4%)
+  B wins: 13 (44.8%)
+  Ties: 4 (13.8%)
+
+level2_multi_aspect vs level2_multi_aspect_round2:
+  Total: 29
+  A wins: 0 (0.0%)
+  B wins: 25 (86.2%)
+  Ties: 4 (13.8%)
+
+============================================================
+Overall Prompt Performance:
+------------------------------------------------------------
+
+5steps:
+  Wins: 65
+  Losses: 162
+  Ties: 34
+  Total: 261
+  Win Rate: 24.9%
+
+5steps_round2:
+  Wins: 89
+  Losses: 127
+  Ties: 45
+  Total: 261
+  Win Rate: 34.1%
+
+Highly_formal_academic:
+  Wins: 0
+  Losses: 261
+  Ties: 0
+  Total: 261
+  Win Rate: 0.0%
+
+Highly_formal_academic_round2:
+  Wins: 29
+  Losses: 223
+  Ties: 9
+  Total: 261
+  Win Rate: 11.1%
+
+baseline:
+  Wins: 84
+  Losses: 139
+  Ties: 38
+  Total: 261
+  Win Rate: 32.2%
+
+baseline_round2:
+  Wins: 136
+  Losses: 88
+  Ties: 37
+  Total: 261
+  Win Rate: 52.1%
+
+casual:
+  Wins: 194
+  Losses: 30
+  Ties: 37
+  Total: 261
+  Win Rate: 74.3%
+
+casual_round2:
+  Wins: 219
+  Losses: 22
+  Ties: 20
+  Total: 261
+  Win Rate: 83.9%
+
+level2_multi_aspect:
+  Wins: 127
+  Losses: 88
+  Ties: 46
+  Total: 261
+  Win Rate: 48.7%
+
+level2_multi_aspect_round2:
+  Wins: 217
+  Losses: 20
+  Ties: 24
+  Total: 261
+  Win Rate: 83.1%
+
+============================================================
+Terms with Most Disagreements (not all ties):
+------------------------------------------------------------
+
+Top 10 terms with most non-tie results:
+  big O notation: 44 non-ties, 1 ties (out of 45 comparisons)
+  computability theory: 44 non-ties, 1 ties (out of 45 comparisons)
+  floating-point arithmetic: 44 non-ties, 1 ties (out of 45 comparisons)
+  true quantified Boolean formula: 43 non-ties, 2 ties (out of 45 comparisons)
+  agent-based model (ABM): 43 non-ties, 2 ties (out of 45 comparisons)
+  class: 43 non-ties, 2 ties (out of 45 comparisons)
+  quantum computing: 43 non-ties, 2 ties (out of 45 comparisons)
+  Selective Linear Definite Clause Resolution: 42 non-ties, 3 ties (out of 45 comparisons)
+  regression analysis: 42 non-ties, 3 ties (out of 45 comparisons)
+  Big O notation: 41 non-ties, 4 ties (out of 45 comparisons)
+
+============================================================
+Calculating Elo Ratings...
+------------------------------------------------------------
+  Rank 1: level2_multi_aspect_round2 - Elo: 1954.26
+  Rank 2: casual_round2 - Elo: 1939.70
+  Rank 3: casual - Elo: 1933.70
+  Rank 4: level2_multi_aspect - Elo: 1614.65
+  Rank 5: baseline_round2 - Elo: 1583.77
+  Rank 6: 5steps_round2 - Elo: 1486.98
+  Rank 7: baseline - Elo: 1436.33
+  Rank 8: 5steps - Elo: 1295.80
+  Rank 9: Highly_formal_academic_round2 - Elo: 998.59
+  Rank 10: Highly_formal_academic - Elo: 756.23
+
+✅ Elo ratings saved to: result/elo_ratings.json
+✅ Script completed successfully
+
+================================================================================
+Log ended at: 2026-03-03 18:14:56
+================================================================================
+

@@ -1,0 +1,396 @@
+
+================================================================================
+Log started at: 2026-03-03 17:53:13
+================================================================================
+
+Logging to: utils/logger\data_filter_20260303_175313.log
+Script: data_filter
+--------------------------------------------------------------------------------
+Found 385 already processed terms. Skipping those...
+⏭️  Skipped (already processed): A* search
+⏭️  Skipped (already processed): abductive logic programming (ALP)
+⏭️  Skipped (already processed): abductive reasoning
+⏭️  Skipped (already processed): ablation
+⏭️  Skipped (already processed): abstract data type
+⏭️  Skipped (already processed): abstraction
+⏭️  Skipped (already processed): accelerating change
+⏭️  Skipped (already processed): action language
+⏭️  Skipped (already processed): action model learning
+⏭️  Skipped (already processed): action selection
+⏭️  Skipped (already processed): activation function
+⏭️  Skipped (already processed): adaptive algorithm
+⏭️  Skipped (already processed): adaptive neuro fuzzy inference system (ANFIS)
+⏭️  Skipped (already processed): admissible heuristic
+⏭️  Skipped (already processed): affective computing
+⏭️  Skipped (already processed): agent architecture
+⏭️  Skipped (already processed): AI accelerator
+⏭️  Skipped (already processed): AI-complete
+⏭️  Skipped (already processed): algorithm
+⏭️  Skipped (already processed): algorithmic efficiency
+⏭️  Skipped (already processed): algorithmic probability
+⏭️  Skipped (already processed): AlphaGo
+⏭️  Skipped (already processed): ambient intelligence (AmI)
+⏭️  Skipped (already processed): analysis of algorithms
+⏭️  Skipped (already processed): analytics
+⏭️  Skipped (already processed): answer set programming (ASP)
+⏭️  Skipped (already processed): ant colony optimization (ACO)
+⏭️  Skipped (already processed): anytime algorithm
+⏭️  Skipped (already processed): application programming interface (API)
+⏭️  Skipped (already processed): approximate string matching
+⏭️  Skipped (already processed): approximation error
+⏭️  Skipped (already processed): argumentation framework
+⏭️  Skipped (already processed): artificial general intelligence (AGI)
+⏭️  Skipped (already processed): artificial immune system (AIS)
+⏭️  Skipped (already processed): artificial intelligence (AI)
+⏭️  Skipped (already processed): Artificial Intelligence Markup Language
+⏭️  Skipped (already processed): Association for the Advancement of Artificial Intelligence (AAAI)
+⏭️  Skipped (already processed): asymptotic computational complexity
+⏭️  Skipped (already processed): attention mechanism
+⏭️  Skipped (already processed): attributional calculus
+⏭️  Skipped (already processed): backpropagation
+⏭️  Skipped (already processed): backpropagation through structure (BPTS)
+⏭️  Skipped (already processed): backpropagation through time (BPTT)
+⏭️  Skipped (already processed): backward chaining
+⏭️  Skipped (already processed): bag-of-words model
+⏭️  Skipped (already processed): bag-of-words model in computer vision
+⏭️  Skipped (already processed): batch normalization
+⏭️  Skipped (already processed): Bayesian programming
+⏭️  Skipped (already processed): bees algorithm
+⏭️  Skipped (already processed): behavior informatics (BI)
+⏭️  Skipped (already processed): behavior tree (BT)
+⏭️  Skipped (already processed): belief–desire–intention software model (BDI)
+⏭️  Skipped (already processed): bias–variance tradeoff
+⏭️  Skipped (already processed): big data
+⏭️  Skipped (already processed): Big O notation
+⏭️  Skipped (already processed): binary tree
+⏭️  Skipped (already processed): blackboard system
+⏭️  Skipped (already processed): Boltzmann machine
+⏭️  Skipped (already processed): Boolean satisfiability problem
+⏭️  Skipped (already processed): boosting
+⏭️  Skipped (already processed): bootstrap aggregating
+⏭️  Skipped (already processed): brain technology
+⏭️  Skipped (already processed): branching factor
+⏭️  Skipped (already processed): brute-force search
+⏭️  Skipped (already processed): capsule neural network (CapsNet)
+⏭️  Skipped (already processed): case-based reasoning (CBR)
+⏭️  Skipped (already processed): chatbot
+⏭️  Skipped (already processed): cloud robotics
+⏭️  Skipped (already processed): cluster analysis
+⏭️  Skipped (already processed): Cobweb
+⏭️  Skipped (already processed): cognitive architecture
+⏭️  Skipped (already processed): cognitive computing
+⏭️  Skipped (already processed): cognitive science
+⏭️  Skipped (already processed): combinatorial optimization
+⏭️  Skipped (already processed): committee machine
+⏭️  Skipped (already processed): commonsense knowledge
+⏭️  Skipped (already processed): commonsense reasoning
+⏭️  Skipped (already processed): computational chemistry
+⏭️  Skipped (already processed): computational complexity theory
+⏭️  Skipped (already processed): computational creativity
+⏭️  Skipped (already processed): computational cybernetics
+⏭️  Skipped (already processed): computational humor
+⏭️  Skipped (already processed): computational intelligence (CI)
+⏭️  Skipped (already processed): computational learning theory
+⏭️  Skipped (already processed): computational linguistics
+⏭️  Skipped (already processed): computational mathematics
+⏭️  Skipped (already processed): computational neuroscience
+⏭️  Skipped (already processed): computational number theory
+⏭️  Skipped (already processed): computational problem
+⏭️  Skipped (already processed): computational statistics
+⏭️  Skipped (already processed): computer-automated design (CAutoD)
+⏭️  Skipped (already processed): computer audition (CA)
+⏭️  Skipped (already processed): computer science
+⏭️  Skipped (already processed): computer vision
+⏭️  Skipped (already processed): concept drift
+⏭️  Skipped (already processed): connectionism
+⏭️  Skipped (already processed): consistent heuristic
+⏭️  Skipped (already processed): constrained conditional model (CCM)
+⏭️  Skipped (already processed): constraint logic programming
+⏭️  Skipped (already processed): constraint programming
+⏭️  Skipped (already processed): constructed language
+⏭️  Skipped (already processed): control theory
+⏭️  Skipped (already processed): convolutional neural network
+⏭️  Skipped (already processed): crossover
+⏭️  Skipped (already processed): Darkforest
+⏭️  Skipped (already processed): Dartmouth workshop
+⏭️  Skipped (already processed): data augmentation
+⏭️  Skipped (already processed): data fusion
+⏭️  Skipped (already processed): data integration
+⏭️  Skipped (already processed): data mining
+⏭️  Skipped (already processed): data science
+⏭️  Skipped (already processed): data set
+⏭️  Skipped (already processed): data warehouse (DW or DWH)
+⏭️  Skipped (already processed): Datalog
+⏭️  Skipped (already processed): decision boundary
+⏭️  Skipped (already processed): decision support system (DSS)
+⏭️  Skipped (already processed): decision theory
+⏭️  Skipped (already processed): decision tree learning
+⏭️  Skipped (already processed): declarative programming
+⏭️  Skipped (already processed): deductive classifier
+⏭️  Skipped (already processed): Deep Blue
+⏭️  Skipped (already processed): deep learning
+⏭️  Skipped (already processed): DeepMind Technologies
+⏭️  Skipped (already processed): default logic
+⏭️  Skipped (already processed): Density-based spatial clustering of applications with noise (DBSCAN)
+⏭️  Skipped (already processed): description logic (DL)
+⏭️  Skipped (already processed): developmental robotics (DevRob)
+⏭️  Skipped (already processed): diagnosis
+⏭️  Skipped (already processed): dialogue system
+⏭️  Skipped (already processed): diffusion model
+⏭️  Skipped (already processed): Dijkstra's algorithm
+⏭️  Skipped (already processed): dimensionality reduction
+⏭️  Skipped (already processed): discrete system
+⏭️  Skipped (already processed): distributed artificial intelligence (DAI)
+⏭️  Skipped (already processed): double descent
+⏭️  Skipped (already processed): dropout
+⏭️  Skipped (already processed): dynamic epistemic logic (DEL)
+⏭️  Skipped (already processed): eager learning
+⏭️  Skipped (already processed): early stopping
+⏭️  Skipped (already processed): Ebert test
+⏭️  Skipped (already processed): echo state network (ESN)
+⏭️  Skipped (already processed): embodied agent
+⏭️  Skipped (already processed): embodied cognitive science
+⏭️  Skipped (already processed): error-driven learning
+⏭️  Skipped (already processed): ensemble learning
+⏭️  Skipped (already processed): epoch
+⏭️  Skipped (already processed): ethics of artificial intelligence
+⏭️  Skipped (already processed): evolutionary algorithm (EA)
+⏭️  Skipped (already processed): evolutionary computation
+⏭️  Skipped (already processed): evolving classification function (ECF)
+⏭️  Skipped (already processed): existential risk
+⏭️  Skipped (already processed): expert system
+⏭️  Skipped (already processed): fast-and-frugal trees
+⏭️  Skipped (already processed): feature
+⏭️  Skipped (already processed): feature extraction
+⏭️  Skipped (already processed): feature learning
+⏭️  Skipped (already processed): feature selection
+⏭️  Skipped (already processed): federated learning
+⏭️  Skipped (already processed): first-order logic
+⏭️  Skipped (already processed): fluent
+⏭️  Skipped (already processed): formal language
+⏭️  Skipped (already processed): forward chaining
+⏭️  Skipped (already processed): frame
+⏭️  Skipped (already processed): frame language
+⏭️  Skipped (already processed): frame problem
+⏭️  Skipped (already processed): friendly artificial intelligence
+⏭️  Skipped (already processed): futures studies
+⏭️  Skipped (already processed): fuzzy control system
+⏭️  Skipped (already processed): fuzzy logic
+⏭️  Skipped (already processed): fuzzy rule
+⏭️  Skipped (already processed): fuzzy set
+⏭️  Skipped (already processed): game theory
+⏭️  Skipped (already processed): general game playing (GGP)
+⏭️  Skipped (already processed): generalization
+⏭️  Skipped (already processed): generalization error
+⏭️  Skipped (already processed): generative adversarial network (GAN)
+⏭️  Skipped (already processed): generative artificial intelligence
+⏭️  Skipped (already processed): generative pretrained transformer (GPT)
+⏭️  Skipped (already processed): genetic algorithm (GA)
+⏭️  Skipped (already processed): genetic operator
+⏭️  Skipped (already processed): glowworm swarm optimization
+⏭️  Skipped (already processed): gradient boosting
+⏭️  Skipped (already processed): graph (abstract data type)
+⏭️  Skipped (already processed): graph (discrete mathematics)
+⏭️  Skipped (already processed): graph database (GDB)
+⏭️  Skipped (already processed): graph theory
+⏭️  Skipped (already processed): graph traversal
+⏭️  Skipped (already processed): hallucination
+⏭️  Skipped (already processed): heuristic
+⏭️  Skipped (already processed): hidden layer
+⏭️  Skipped (already processed): hyper-heuristic
+⏭️  Skipped (already processed): hyperparameter
+⏭️  Skipped (already processed): hyperparameter optimization
+⏭️  Skipped (already processed): hyperplane
+⏭️  Skipped (already processed): IEEE Computational Intelligence Society
+⏭️  Skipped (already processed): incremental learning
+⏭️  Skipped (already processed): inference engine
+⏭️  Skipped (already processed): information integration (II)
+⏭️  Skipped (already processed): Information Processing Language (IPL)
+⏭️  Skipped (already processed): intelligence amplification (IA)
+⏭️  Skipped (already processed): intelligence explosion
+⏭️  Skipped (already processed): intelligent agent (IA)
+⏭️  Skipped (already processed): intelligent control
+⏭️  Skipped (already processed): intelligent personal assistant
+⏭️  Skipped (already processed): interpretation
+⏭️  Skipped (already processed): intrinsic motivation
+⏭️  Skipped (already processed): issue tree
+⏭️  Skipped (already processed): junction tree algorithm
+⏭️  Skipped (already processed): kernel method
+⏭️  Skipped (already processed): KL-ONE
+⏭️  Skipped (already processed): k -nearest neighbors
+⏭️  Skipped (already processed): knowledge acquisition
+⏭️  Skipped (already processed): knowledge-based system (KBS)
+⏭️  Skipped (already processed): knowledge distillation
+⏭️  Skipped (already processed): knowledge engineering (KE)
+⏭️  Skipped (already processed): knowledge extraction
+⏭️  Skipped (already processed): knowledge Interchange Format (KIF)
+⏭️  Skipped (already processed): knowledge representation and reasoning (KR² or KR&R)
+⏭️  Skipped (already processed): k-means clustering
+⏭️  Skipped (already processed): language model
+⏭️  Skipped (already processed): large language model (LLM)
+⏭️  Skipped (already processed): lazy learning
+⏭️  Skipped (already processed): Lisp (programming language) (LISP)
+⏭️  Skipped (already processed): logic programming
+⏭️  Skipped (already processed): long short-term memory (LSTM)
+⏭️  Skipped (already processed): lora
+⏭️  Skipped (already processed): machine vision (MV)
+⏭️  Skipped (already processed): Markov chain
+⏭️  Skipped (already processed): Markov decision process (MDP)
+⏭️  Skipped (already processed): mathematical optimization
+⏭️  Skipped (already processed): machine learning (ML)
+⏭️  Skipped (already processed): machine listening
+⏭️  Skipped (already processed): machine perception
+⏭️  Skipped (already processed): mechanism design
+⏭️  Skipped (already processed): mechatronics
+⏭️  Skipped (already processed): metabolic network reconstruction and simulation
+⏭️  Skipped (already processed): metaheuristic
+⏭️  Skipped (already processed): model checking
+⏭️  Skipped (already processed): modus ponens
+⏭️  Skipped (already processed): modus tollens
+⏭️  Skipped (already processed): Monte Carlo tree search
+⏭️  Skipped (already processed): multi-agent system (MAS)
+⏭️  Skipped (already processed): multilayer perceptron (MLP)
+⏭️  Skipped (already processed): multi-swarm optimization
+⏭️  Skipped (already processed): mutation
+⏭️  Skipped (already processed): Mycin
+⏭️  Skipped (already processed): naive Bayes classifier
+⏭️  Skipped (already processed): naive semantics
+⏭️  Skipped (already processed): name binding
+⏭️  Skipped (already processed): named-entity recognition (NER)
+⏭️  Skipped (already processed): named graph
+⏭️  Skipped (already processed): natural language generation (NLG)
+⏭️  Skipped (already processed): natural language processing (NLP)
+⏭️  Skipped (already processed): natural language programming
+⏭️  Skipped (already processed): network motif
+⏭️  Skipped (already processed): neural machine translation (NMT)
+⏭️  Skipped (already processed): neural network
+⏭️  Skipped (already processed): neural Turing machine (NTM)
+⏭️  Skipped (already processed): neuro-fuzzy
+⏭️  Skipped (already processed): neurocybernetics
+⏭️  Skipped (already processed): neuromorphic engineering
+⏭️  Skipped (already processed): node
+⏭️  Skipped (already processed): nondeterministic algorithm
+⏭️  Skipped (already processed): nouvelle AI
+⏭️  Skipped (already processed): NP
+⏭️  Skipped (already processed): NP-completeness
+⏭️  Skipped (already processed): NP-hardness
+⏭️  Skipped (already processed): Occam's razor
+⏭️  Skipped (already processed): offline learning
+⏭️  Skipped (already processed): online machine learning
+⏭️  Skipped (already processed): ontology learning
+⏭️  Skipped (already processed): OpenAI
+⏭️  Skipped (already processed): OpenCog
+⏭️  Skipped (already processed): Open Mind Common Sense
+⏭️  Skipped (already processed): open-source software (OSS)
+⏭️  Skipped (already processed): overfitting
+⏭️  Skipped (already processed): partial order reduction
+⏭️  Skipped (already processed): partially observable Markov decision process (POMDP)
+⏭️  Skipped (already processed): particle swarm optimization (PSO)
+⏭️  Skipped (already processed): pathfinding
+⏭️  Skipped (already processed): pattern recognition
+⏭️  Skipped (already processed): perceptron
+⏭️  Skipped (already processed): predicate logic
+⏭️  Skipped (already processed): predictive analytics
+⏭️  Skipped (already processed): principal component analysis (PCA)
+⏭️  Skipped (already processed): principle of rationality
+⏭️  Skipped (already processed): probabilistic programming (PP)
+⏭️  Skipped (already processed): production system
+⏭️  Skipped (already processed): programming language
+⏭️  Skipped (already processed): Prolog
+⏭️  Skipped (already processed): propositional calculus
+⏭️  Skipped (already processed): proximal policy optimization (PPO)
+⏭️  Skipped (already processed): Python
+⏭️  Skipped (already processed): PyTorch
+⏭️  Skipped (already processed): Q-learning
+⏭️  Skipped (already processed): qualification problem
+⏭️  Skipped (already processed): quantifier
+⏭️  Skipped (already processed): quantum computing
+⏭️  Skipped (already processed): query language
+⏭️  Skipped (already processed): R programming language
+⏭️  Skipped (already processed): radial basis function network
+⏭️  Skipped (already processed): random forest
+⏭️  Skipped (already processed): reasoning system
+⏭️  Skipped (already processed): recurrent neural network (RNN)
+⏭️  Skipped (already processed): regression analysis
+⏭️  Skipped (already processed): regularization
+⏭️  Skipped (already processed): reinforcement learning (RL)
+⏭️  Skipped (already processed): reinforcement learning from human feedback (RLHF)
+⏭️  Skipped (already processed): representation learning
+⏭️  Skipped (already processed): reservoir computing
+⏭️  Skipped (already processed): Resource Description Framework (RDF)
+⏭️  Skipped (already processed): restricted Boltzmann machine (RBM)
+⏭️  Skipped (already processed): Rete algorithm
+⏭️  Skipped (already processed): Retrieval augmented generation (RAG)
+⏭️  Skipped (already processed): robotics
+⏭️  Skipped (already processed): rule-based system
+⏭️  Skipped (already processed): satisfiability
+⏭️  Skipped (already processed): search algorithm
+⏭️  Skipped (already processed): selection
+⏭️  Skipped (already processed): self-management
+⏭️  Skipped (already processed): semantic network
+⏭️  Skipped (already processed): semantic reasoner
+⏭️  Skipped (already processed): semantic query
+⏭️  Skipped (already processed): semantics
+⏭️  Skipped (already processed): semi-supervised learning
+⏭️  Skipped (already processed): sensor fusion
+⏭️  Skipped (already processed): separation logic
+⏭️  Skipped (already processed): similarity learning
+⏭️  Skipped (already processed): simulated annealing (SA)
+⏭️  Skipped (already processed): situated approach
+⏭️  Skipped (already processed): situation calculus
+⏭️  Skipped (already processed): Selective Linear Definite clause resolution
+⏭️  Skipped (already processed): software
+⏭️  Skipped (already processed): software engineering
+⏭️  Skipped (already processed): spatial-temporal reasoning
+⏭️  Skipped (already processed): SPARQL
+⏭️  Skipped (already processed): sparse dictionary learning
+⏭️  Skipped (already processed): speech recognition
+⏭️  Skipped (already processed): spiking neural network (SNN)
+⏭️  Skipped (already processed): state
+⏭️  Skipped (already processed): statistical classification
+⏭️  Skipped (already processed): state–action–reward–state–action (SARSA)
+⏭️  Skipped (already processed): statistical relational learning (SRL)
+⏭️  Skipped (already processed): stochastic optimization (SO)
+⏭️  Skipped (already processed): stochastic semantic analysis
+⏭️  Skipped (already processed): Stanford Research Institute Problem Solver (STRIPS)
+⏭️  Skipped (already processed): subject-matter expert (SME)
+⏭️  Skipped (already processed): superintelligence
+⏭️  Skipped (already processed): supervised learning
+⏭️  Skipped (already processed): support vector machines
+⏭️  Skipped (already processed): swarm intelligence (SI)
+⏭️  Skipped (already processed): symbolic artificial intelligence
+⏭️  Skipped (already processed): synthetic intelligence (SI)
+⏭️  Skipped (already processed): systems neuroscience
+⏭️  Skipped (already processed): technological singularity
+⏭️  Skipped (already processed): temporal difference learning
+⏭️  Skipped (already processed): tensor network theory
+⏭️  Skipped (already processed): TensorFlow
+⏭️  Skipped (already processed): theoretical computer science (TCS)
+⏭️  Skipped (already processed): theory of computation
+⏭️  Skipped (already processed): Thompson sampling
+⏭️  Skipped (already processed): time complexity
+⏭️  Skipped (already processed): transfer learning
+⏭️  Skipped (already processed): transformer
+⏭️  Skipped (already processed): transhumanism
+⏭️  Skipped (already processed): transition system
+⏭️  Skipped (already processed): tree traversal
+⏭️  Skipped (already processed): true quantified Boolean formula
+⏭️  Skipped (already processed): Turing machine
+⏭️  Skipped (already processed): Turing test
+⏭️  Skipped (already processed): type system
+⏭️  Skipped (already processed): unsupervised learning
+⏭️  Skipped (already processed): vision processing unit (VPU)
+⏭️  Skipped (already processed): Value-alignment complete
+⏭️  Skipped (already processed): Watson
+⏭️  Skipped (already processed): weak AI
+⏭️  Skipped (already processed): weak supervision
+⏭️  Skipped (already processed): word embedding
+⏭️  Skipped (already processed): XGBoost
+
+Summary: 0 new entries processed, 379 skipped, 379 total in CSV
+✅ Script completed successfully
+
+================================================================================
+Log ended at: 2026-03-03 17:53:13
+================================================================================
+

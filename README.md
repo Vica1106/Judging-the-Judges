@@ -31,6 +31,32 @@ pip install -r requirements.txt
 2. Ensure prompt files are in the `prompts/` directory
 3. Place CSV files to process in `data/raw_data/`
 
+### Logging
+
+All scripts automatically log their output to files in the `utils/logger/` directory. Each script run creates a timestamped log file (e.g., `data_filter_20240101_120000.log`) that captures:
+- All `print()` statements
+- All errors and exceptions
+- Complete execution trace
+
+Log files are automatically created and saved to `utils/logger/` folder. No additional configuration needed!
+
+### Skip Logic (Avoid Duplicate Processing)
+
+All scripts are designed to **skip processing if output files already exist** and contain the corresponding data:
+
+- **`data/data_filter.py`**: Skips terms already in output file (uses append mode)
+- **`data/response_generator.py`**: Skips terms already in output file, reuses existing top-k file if available
+- **`analyze/evaluate_explanations.py`**: Skips (term, comparison) pairs already processed (preserves existing results)
+- **`analyze/analyze_evaluation.py`**: Skips recalculation if output exists and input hasn't changed
+
+**Benefits**:
+- ✅ Safe to re-run scripts - they automatically resume from where they left off
+- ✅ No duplicate API calls - saves costs
+- ✅ No data loss - existing data is always preserved
+- ✅ Efficient - only processes new/missing data
+
+See `SKIP_LOGIC.md` for detailed documentation.
+
 ## Project Structure
 
 ```
@@ -48,14 +74,27 @@ Judging-the-Judges/
 │   │   └── getDataFromWiki.py      # Scrape Wikipedia glossaries to CSV
 │   └── response_dataset/            # Output: generated explanations per prompt variant
 ├── prompts/                         # Prompt templates
-│   ├── baseline.json                # Baseline prompt template
-│   ├── level2_multi_aspect.json    # Multi-aspect prompt template
+│   ├── baseline.json                # Baseline Round1 prompt
+│   ├── level2_multi_aspect.json     # Multi-aspect Round1 prompt
+│   ├── 5_step.json                  # 5-step structured Round1 prompt
+│   ├── casual.json                  # Casual / conversational Round1 prompt
+│   ├── Highly_formal_academic.json  # Highly formal academic Round1 prompt
 │   ├── round2/                      # Refined Round2 prompt templates
+│   │   ├── baseline_round2.json
+│   │   ├── level2_multi_aspect_round2.json
+│   │   ├── 5steps_round2.json
+│   │   ├── casual_round2.json
+│   │   └── Highly_formal_academic_round2.json
 │   └── prompt_round2.py             # Generate Round2 prompts from feedback
 ├── result/                          # Evaluation results
 │   ├── evaluation_results.jsonl     # Pairwise comparison results
 │   ├── elo_ratings.json            # Final Elo rankings
 │   └── human_eval_rankings.json    # Human evaluation rankings
+├── utils/                           # Utility modules
+│   ├── __init__.py                 # Package init
+│   ├── logger.py                   # Logging utility (captures all output)
+│   └── logger/                     # Log files directory
+│       └── *.log                    # Log files (auto-generated with timestamps)
 ├── process_all_csv.sh               # Process all CSVs and generate responses
 ├── run_evaluation.sh                # Run pairwise evaluation and Elo calculation
 ├── generate_r2_responses.sh         # Generate Round2 explanations

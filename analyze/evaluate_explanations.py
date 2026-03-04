@@ -8,6 +8,10 @@ import argparse
 import sys
 from itertools import combinations
 
+# Add parent directory to path for utils import
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from utils.logger import setup_logging, cleanup_logging
+
 def load_jsonl(file_path: str):
     """Load entries from a JSONL file"""
     entries = {}
@@ -206,7 +210,13 @@ def combine_judgments(judgment_ab, judgment_ba):
         return "tie"
 
 def get_processed_comparisons(output_path: str):
-    """Read existing output file and return set of already processed (term, comparison) pairs"""
+    """
+    Read existing output file and return a set of already processed comparison keys.
+
+    To make skipping robust to prompt renames and ordering differences (A vs B vs B vs A),
+    we store a canonical key based on:
+        (term, (min(prompt_a, prompt_b), max(prompt_a, prompt_b)))
+    """
     processed = set()
     if os.path.exists(output_path):
         try:
@@ -217,7 +227,14 @@ def get_processed_comparisons(output_path: str):
                         term = entry.get("Term", "")
                         comparison = entry.get("Comparison", "")
                         if term and comparison:
-                            processed.add((term, comparison))
+                            # Parse "PromptA vs PromptB" and build a canonical pair
+                            if " vs " in comparison:
+                                p1, p2 = comparison.split(" vs ", 1)
+                                key = (term, tuple(sorted([p1.strip(), p2.strip()])))
+                            else:
+                                # Fallback: store raw comparison string
+                                key = (term, comparison)
+                            processed.add(key)
         except (json.JSONDecodeError, IOError) as e:
             print(f"Warning: Could not read existing output file: {e}")
     return processed
@@ -300,9 +317,10 @@ def evaluate_explanations(file_paths: list, output_path: str):
             prompt_a = prompt_names[file_a]
             prompt_b = prompt_names[file_b]
             comparison_key = f"{prompt_a} vs {prompt_b}"
+            canonical_key = (term, tuple(sorted([prompt_a, prompt_b])))
             
-            # Check if already processed
-            if (term, comparison_key) in processed:
+            # Check if already processed (in either A vs B or B vs A order)
+            if canonical_key in processed:
                 skipped_count += 1
                 print(f"⏭️  Skipped (already processed): {term} - {comparison_key}")
                 continue
@@ -386,50 +404,63 @@ def evaluate_explanations(file_paths: list, output_path: str):
         print(f"  {key}: {count}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Evaluate explanations from multiple prompt files using pairwise comparison")
-    parser.add_argument("--files", type=str, nargs="+", default=None,
-                       help="Paths to JSONL files containing explanations (optional). If omitted, scans response_dataset recursively and groups by major.")
-    parser.add_argument("--response-dataset", type=str, default="data/response_dataset",
-                       help="Directory containing JSONL files with explanations (default: data/response_dataset)")
-    parser.add_argument("--output", type=str, default="result/evaluation_results.jsonl",
-                       help="Path to output JSONL file with evaluation results")
+    # Set up logging
+    stdout_logger, stderr_logger = setup_logging("evaluate_explanations")
     
-    args = parser.parse_args()
-    
-    # If files not specified, find all JSONL files recursively and group by major slug
-    if args.files is None:
-        print(f"Finding JSONL files recursively under '{args.response_dataset}'...")
-        all_paths = find_jsonl_files_recursive(args.response_dataset)
-        if not all_paths:
-            print(f"Error: No JSONL files found in '{args.response_dataset}'")
-            sys.exit(1)
-        print(f"Found {len(all_paths)} JSONL files total.")
-        # Group by major slug
-        grouped = {}
-        for p in all_paths:
-            slug = extract_major_slug_from_filename(p)
-            if not slug:
-                # Skip non-matching files
-                continue
-            grouped.setdefault(slug, []).append(p)
-        if not grouped:
-            print("Error: No matching explanation files (glossary_of_*_explanations.jsonl) found.")
-            sys.exit(1)
-        # Evaluate each group (require at least 2 variants)
-        for slug, paths in grouped.items():
-            group_paths = sorted(paths)
-            print(f"\nEvaluating major '{slug}' with {len(group_paths)} files:")
-            for fp in group_paths:
-                print(f"  - {fp}")
-            if len(group_paths) < 2:
-                print(f"Skipping '{slug}' (need at least 2 files to compare).")
-                continue
-            evaluate_explanations(group_paths, args.output)
-        print(f"\n✅ All group evaluations written to: {args.output}")
-    else:
-        file_paths = args.files
-        if len(file_paths) < 2:
-            print("Error: Need at least 2 files to compare.")
-            sys.exit(1)
-        evaluate_explanations(file_paths, args.output)
+    try:
+        parser = argparse.ArgumentParser(description="Evaluate explanations from multiple prompt files using pairwise comparison")
+        parser.add_argument("--files", type=str, nargs="+", default=None,
+                           help="Paths to JSONL files containing explanations (optional). If omitted, scans response_dataset recursively and groups by major.")
+        parser.add_argument("--response-dataset", type=str, default="data/response_dataset",
+                           help="Directory containing JSONL files with explanations (default: data/response_dataset)")
+        parser.add_argument("--output", type=str, default="result/evaluation_results.jsonl",
+                           help="Path to output JSONL file with evaluation results")
+        
+        args = parser.parse_args()
+        
+        # If files not specified, find all JSONL files recursively and group by major slug
+        if args.files is None:
+            print(f"Finding JSONL files recursively under '{args.response_dataset}'...")
+            all_paths = find_jsonl_files_recursive(args.response_dataset)
+            if not all_paths:
+                print(f"Error: No JSONL files found in '{args.response_dataset}'")
+                sys.exit(1)
+            print(f"Found {len(all_paths)} JSONL files total.")
+            # Group by major slug
+            grouped = {}
+            for p in all_paths:
+                slug = extract_major_slug_from_filename(p)
+                if not slug:
+                    # Skip non-matching files
+                    continue
+                grouped.setdefault(slug, []).append(p)
+            if not grouped:
+                print("Error: No matching explanation files (glossary_of_*_explanations.jsonl) found.")
+                sys.exit(1)
+            # Evaluate each group (require at least 2 variants)
+            for slug, paths in grouped.items():
+                group_paths = sorted(paths)
+                print(f"\nEvaluating major '{slug}' with {len(group_paths)} files:")
+                for fp in group_paths:
+                    print(f"  - {fp}")
+                if len(group_paths) < 2:
+                    print(f"Skipping '{slug}' (need at least 2 files to compare).")
+                    continue
+                evaluate_explanations(group_paths, args.output)
+            print(f"\n✅ All group evaluations written to: {args.output}")
+        else:
+            file_paths = args.files
+            if len(file_paths) < 2:
+                print("Error: Need at least 2 files to compare.")
+                sys.exit(1)
+            evaluate_explanations(file_paths, args.output)
+        print("✅ Script completed successfully")
+        
+    except Exception as e:
+        print(f"❌ Error occurred: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+    finally:
+        cleanup_logging(stdout_logger, stderr_logger)
 

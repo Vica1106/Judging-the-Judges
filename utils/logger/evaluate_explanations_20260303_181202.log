@@ -1,0 +1,1755 @@
+
+================================================================================
+Log started at: 2026-03-03 18:12:02
+================================================================================
+
+Logging to: utils/logger\evaluate_explanations_20260303_181202.log
+Script: evaluate_explanations
+--------------------------------------------------------------------------------
+Finding JSONL files recursively under 'data/response_dataset'...
+Found 30 JSONL files total.
+
+Evaluating major 'AI' with 10 files:
+  - data/response_dataset\5steps\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\5steps_round2\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\Highly_formal_academic\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\Highly_formal_academic_round2\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\baseline\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\baseline_round2\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\casual\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\casual_round2\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\level2_multi_aspect\glossary_of_AI_explanations.jsonl
+  - data/response_dataset\level2_multi_aspect_round2\glossary_of_AI_explanations.jsonl
+Loading explanation files...
+  Loaded 10 entries from 5steps (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from 5steps_round2 (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from Highly_formal_academic (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from Highly_formal_academic_round2 (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from baseline (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from baseline_round2 (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from casual (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from casual_round2 (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from level2_multi_aspect (glossary_of_AI_explanations.jsonl)
+  Loaded 10 entries from level2_multi_aspect_round2 (glossary_of_AI_explanations.jsonl)
+
+Found 10 common terms across all files.
+
+Will perform 45 pairwise comparisons per term (with order swapping: 450 total comparisons).
+Each pair will be judged in both orders (A,B and B,A) and results will be combined.
+
+Found 1305 already processed comparisons. Skipping those...
+
+⏭️  Skipped (already processed): Big O notation - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): Big O notation - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): Big O notation - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Big O notation - 5steps vs baseline
+⏭️  Skipped (already processed): Big O notation - 5steps vs baseline_round2
+⏭️  Skipped (already processed): Big O notation - 5steps vs casual
+⏭️  Skipped (already processed): Big O notation - 5steps vs casual_round2
+⏭️  Skipped (already processed): Big O notation - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): Big O notation - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Big O notation - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): Big O notation - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Big O notation - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): Big O notation - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): Big O notation - 5steps_round2 vs casual
+⏭️  Skipped (already processed): Big O notation - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): Big O notation - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Big O notation - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Big O notation - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Big O notation - baseline vs baseline_round2
+⏭️  Skipped (already processed): Big O notation - baseline vs casual
+⏭️  Skipped (already processed): Big O notation - baseline vs casual_round2
+⏭️  Skipped (already processed): Big O notation - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): Big O notation - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Big O notation - baseline_round2 vs casual
+⏭️  Skipped (already processed): Big O notation - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): Big O notation - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Big O notation - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Big O notation - casual vs casual_round2
+⏭️  Skipped (already processed): Big O notation - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): Big O notation - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Big O notation - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Big O notation - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Big O notation - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): Darkforest - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): Darkforest - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Darkforest - 5steps vs baseline
+⏭️  Skipped (already processed): Darkforest - 5steps vs baseline_round2
+⏭️  Skipped (already processed): Darkforest - 5steps vs casual
+⏭️  Skipped (already processed): Darkforest - 5steps vs casual_round2
+⏭️  Skipped (already processed): Darkforest - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): Darkforest - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): Darkforest - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Darkforest - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): Darkforest - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): Darkforest - 5steps_round2 vs casual
+⏭️  Skipped (already processed): Darkforest - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): Darkforest - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Darkforest - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Darkforest - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - baseline vs baseline_round2
+⏭️  Skipped (already processed): Darkforest - baseline vs casual
+⏭️  Skipped (already processed): Darkforest - baseline vs casual_round2
+⏭️  Skipped (already processed): Darkforest - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): Darkforest - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - baseline_round2 vs casual
+⏭️  Skipped (already processed): Darkforest - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): Darkforest - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Darkforest - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - casual vs casual_round2
+⏭️  Skipped (already processed): Darkforest - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): Darkforest - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Darkforest - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Darkforest - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): NP-hardness - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps vs baseline
+⏭️  Skipped (already processed): NP-hardness - 5steps vs baseline_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps vs casual
+⏭️  Skipped (already processed): NP-hardness - 5steps vs casual_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): NP-hardness - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): NP-hardness - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): NP-hardness - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps_round2 vs casual
+⏭️  Skipped (already processed): NP-hardness - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): NP-hardness - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): NP-hardness - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): NP-hardness - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - baseline vs baseline_round2
+⏭️  Skipped (already processed): NP-hardness - baseline vs casual
+⏭️  Skipped (already processed): NP-hardness - baseline vs casual_round2
+⏭️  Skipped (already processed): NP-hardness - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): NP-hardness - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - baseline_round2 vs casual
+⏭️  Skipped (already processed): NP-hardness - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): NP-hardness - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): NP-hardness - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - casual vs casual_round2
+⏭️  Skipped (already processed): NP-hardness - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): NP-hardness - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): NP-hardness - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): NP-hardness - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs baseline
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs baseline_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs casual
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs casual_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps_round2 vs casual
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline vs baseline_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline vs casual
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline vs casual_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline_round2 vs casual
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - casual vs casual_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): Selective Linear Definite Clause Resolution - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs baseline
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs baseline_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs casual
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs casual_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): algorithmic probability - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): algorithmic probability - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): algorithmic probability - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps_round2 vs casual
+⏭️  Skipped (already processed): algorithmic probability - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): algorithmic probability - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): algorithmic probability - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): algorithmic probability - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - baseline vs baseline_round2
+⏭️  Skipped (already processed): algorithmic probability - baseline vs casual
+⏭️  Skipped (already processed): algorithmic probability - baseline vs casual_round2
+⏭️  Skipped (already processed): algorithmic probability - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): algorithmic probability - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - baseline_round2 vs casual
+⏭️  Skipped (already processed): algorithmic probability - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): algorithmic probability - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): algorithmic probability - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - casual vs casual_round2
+⏭️  Skipped (already processed): algorithmic probability - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): algorithmic probability - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): algorithmic probability - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): algorithmic probability - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs baseline
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs baseline_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs casual
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs casual_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps_round2 vs casual
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): behavior informatics (BI) - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): behavior informatics (BI) - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline vs baseline_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline vs casual
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline vs casual_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline_round2 vs casual
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): behavior informatics (BI) - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - casual vs casual_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): behavior informatics (BI) - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): behavior informatics (BI) - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): behavior informatics (BI) - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): big data - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): big data - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big data - 5steps vs baseline
+⏭️  Skipped (already processed): big data - 5steps vs baseline_round2
+⏭️  Skipped (already processed): big data - 5steps vs casual
+⏭️  Skipped (already processed): big data - 5steps vs casual_round2
+⏭️  Skipped (already processed): big data - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): big data - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big data - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): big data - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): big data - 5steps_round2 vs casual
+⏭️  Skipped (already processed): big data - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): big data - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - baseline vs baseline_round2
+⏭️  Skipped (already processed): big data - baseline vs casual
+⏭️  Skipped (already processed): big data - baseline vs casual_round2
+⏭️  Skipped (already processed): big data - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - baseline_round2 vs casual
+⏭️  Skipped (already processed): big data - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): big data - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - casual vs casual_round2
+⏭️  Skipped (already processed): big data - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs baseline
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs baseline_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs casual
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs casual_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): convolutional neural network - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): convolutional neural network - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): convolutional neural network - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps_round2 vs casual
+⏭️  Skipped (already processed): convolutional neural network - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): convolutional neural network - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): convolutional neural network - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): convolutional neural network - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - baseline vs baseline_round2
+⏭️  Skipped (already processed): convolutional neural network - baseline vs casual
+⏭️  Skipped (already processed): convolutional neural network - baseline vs casual_round2
+⏭️  Skipped (already processed): convolutional neural network - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): convolutional neural network - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - baseline_round2 vs casual
+⏭️  Skipped (already processed): convolutional neural network - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): convolutional neural network - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): convolutional neural network - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - casual vs casual_round2
+⏭️  Skipped (already processed): convolutional neural network - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): convolutional neural network - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): convolutional neural network - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): convolutional neural network - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs baseline
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs baseline_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs casual
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs casual_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps_round2 vs casual
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): neural machine translation (NMT) - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): neural machine translation (NMT) - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline vs baseline_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline vs casual
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline vs casual_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline_round2 vs casual
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): neural machine translation (NMT) - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - casual vs casual_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): neural machine translation (NMT) - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): neural machine translation (NMT) - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): neural machine translation (NMT) - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs baseline
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs baseline_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs casual
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs casual_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps_round2 vs casual
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): true quantified Boolean formula - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): true quantified Boolean formula - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline vs baseline_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline vs casual
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline vs casual_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline_round2 vs casual
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): true quantified Boolean formula - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - casual vs casual_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): true quantified Boolean formula - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): true quantified Boolean formula - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): true quantified Boolean formula - level2_multi_aspect vs level2_multi_aspect_round2
+✅ Evaluation complete! Results saved to: result/evaluation_results.jsonl
+   New comparisons: 0
+   Skipped: 450
+   Total comparisons: 1305
+
+Summary Statistics:
+  5steps vs Highly_formal_academic: A: 29
+  5steps vs Highly_formal_academic_round2: A: 28
+  5steps vs Highly_formal_academic_round2: tie: 1
+  5steps vs baseline: A: 4
+  5steps vs baseline: B: 10
+  5steps vs baseline: tie: 15
+  5steps vs baseline_round2: B: 26
+  5steps vs baseline_round2: tie: 3
+  5steps vs casual: B: 28
+  5steps vs casual: tie: 1
+  5steps vs casual_round2: B: 29
+  5steps vs level2_multi_aspect: B: 23
+  5steps vs level2_multi_aspect: tie: 6
+  5steps vs level2_multi_aspect_round2: B: 29
+  5steps_round2 vs 5steps: A: 17
+  5steps_round2 vs 5steps: B: 4
+  5steps_round2 vs 5steps: tie: 8
+  5steps_round2 vs Highly_formal_academic: A: 29
+  5steps_round2 vs Highly_formal_academic_round2: A: 28
+  5steps_round2 vs Highly_formal_academic_round2: tie: 1
+  5steps_round2 vs baseline: A: 12
+  5steps_round2 vs baseline: B: 10
+  5steps_round2 vs baseline: tie: 7
+  5steps_round2 vs baseline_round2: A: 1
+  5steps_round2 vs baseline_round2: B: 19
+  5steps_round2 vs baseline_round2: tie: 9
+  5steps_round2 vs casual: B: 25
+  5steps_round2 vs casual: tie: 4
+  5steps_round2 vs casual_round2: B: 27
+  5steps_round2 vs casual_round2: tie: 2
+  5steps_round2 vs level2_multi_aspect: A: 2
+  5steps_round2 vs level2_multi_aspect: B: 16
+  5steps_round2 vs level2_multi_aspect: tie: 11
+  5steps_round2 vs level2_multi_aspect_round2: B: 26
+  5steps_round2 vs level2_multi_aspect_round2: tie: 3
+  Highly_formal_academic vs baseline: B: 29
+  Highly_formal_academic vs baseline_round2: B: 29
+  Highly_formal_academic vs casual: B: 29
+  Highly_formal_academic vs casual_round2: B: 29
+  Highly_formal_academic vs level2_multi_aspect: B: 29
+  Highly_formal_academic vs level2_multi_aspect_round2: B: 29
+  Highly_formal_academic_round2 vs Highly_formal_academic: A: 29
+  Highly_formal_academic_round2 vs baseline: B: 27
+  Highly_formal_academic_round2 vs baseline: tie: 2
+  Highly_formal_academic_round2 vs baseline_round2: B: 28
+  Highly_formal_academic_round2 vs baseline_round2: tie: 1
+  Highly_formal_academic_round2 vs casual: B: 28
+  Highly_formal_academic_round2 vs casual: tie: 1
+  Highly_formal_academic_round2 vs casual_round2: B: 28
+  Highly_formal_academic_round2 vs casual_round2: tie: 1
+  Highly_formal_academic_round2 vs level2_multi_aspect: B: 28
+  Highly_formal_academic_round2 vs level2_multi_aspect: tie: 1
+  Highly_formal_academic_round2 vs level2_multi_aspect_round2: B: 28
+  Highly_formal_academic_round2 vs level2_multi_aspect_round2: tie: 1
+  baseline vs baseline_round2: A: 5
+  baseline vs baseline_round2: B: 20
+  baseline vs baseline_round2: tie: 4
+  baseline vs casual: B: 26
+  baseline vs casual: tie: 3
+  baseline vs casual_round2: B: 28
+  baseline vs casual_round2: tie: 1
+  baseline vs level2_multi_aspect: A: 3
+  baseline vs level2_multi_aspect: B: 20
+  baseline vs level2_multi_aspect: tie: 6
+  baseline vs level2_multi_aspect_round2: B: 29
+  baseline_round2 vs casual: A: 3
+  baseline_round2 vs casual: B: 20
+  baseline_round2 vs casual: tie: 6
+  baseline_round2 vs casual_round2: A: 2
+  baseline_round2 vs casual_round2: B: 27
+  baseline_round2 vs level2_multi_aspect: A: 9
+  baseline_round2 vs level2_multi_aspect: B: 9
+  baseline_round2 vs level2_multi_aspect: tie: 11
+  baseline_round2 vs level2_multi_aspect_round2: B: 26
+  baseline_round2 vs level2_multi_aspect_round2: tie: 3
+  casual vs casual_round2: A: 6
+  casual vs casual_round2: B: 14
+  casual vs casual_round2: tie: 9
+  casual vs level2_multi_aspect: A: 24
+  casual vs level2_multi_aspect: B: 1
+  casual vs level2_multi_aspect: tie: 4
+  casual vs level2_multi_aspect_round2: A: 8
+  casual vs level2_multi_aspect_round2: B: 12
+  casual vs level2_multi_aspect_round2: tie: 9
+  casual_round2 vs level2_multi_aspect: A: 25
+  casual_round2 vs level2_multi_aspect: B: 1
+  casual_round2 vs level2_multi_aspect: tie: 3
+  casual_round2 vs level2_multi_aspect_round2: A: 12
+  casual_round2 vs level2_multi_aspect_round2: B: 13
+  casual_round2 vs level2_multi_aspect_round2: tie: 4
+  level2_multi_aspect vs level2_multi_aspect_round2: B: 25
+  level2_multi_aspect vs level2_multi_aspect_round2: tie: 4
+
+Evaluating major 'cs' with 10 files:
+  - data/response_dataset\5steps\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\5steps_round2\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\Highly_formal_academic\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\Highly_formal_academic_round2\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\baseline\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\baseline_round2\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\casual\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\casual_round2\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\level2_multi_aspect\glossary_of_cs_explanations.jsonl
+  - data/response_dataset\level2_multi_aspect_round2\glossary_of_cs_explanations.jsonl
+Loading explanation files...
+  Loaded 10 entries from 5steps (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from 5steps_round2 (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from Highly_formal_academic (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from Highly_formal_academic_round2 (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from baseline (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from baseline_round2 (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from casual (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from casual_round2 (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from level2_multi_aspect (glossary_of_cs_explanations.jsonl)
+  Loaded 10 entries from level2_multi_aspect_round2 (glossary_of_cs_explanations.jsonl)
+
+Found 10 common terms across all files.
+
+Will perform 45 pairwise comparisons per term (with order swapping: 450 total comparisons).
+Each pair will be judged in both orders (A,B and B,A) and results will be combined.
+
+Found 1305 already processed comparisons. Skipping those...
+
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs baseline
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs baseline_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs casual
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs casual_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps_round2 vs casual
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): agent-based model (ABM) - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): agent-based model (ABM) - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline vs baseline_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline vs casual
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline vs casual_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline_round2 vs casual
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): agent-based model (ABM) - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - casual vs casual_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): agent-based model (ABM) - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): agent-based model (ABM) - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): agent-based model (ABM) - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): big O notation - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): big O notation - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big O notation - 5steps vs baseline
+⏭️  Skipped (already processed): big O notation - 5steps vs baseline_round2
+⏭️  Skipped (already processed): big O notation - 5steps vs casual
+⏭️  Skipped (already processed): big O notation - 5steps vs casual_round2
+⏭️  Skipped (already processed): big O notation - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): big O notation - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): big O notation - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big O notation - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): big O notation - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): big O notation - 5steps_round2 vs casual
+⏭️  Skipped (already processed): big O notation - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): big O notation - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big O notation - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big O notation - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - baseline vs baseline_round2
+⏭️  Skipped (already processed): big O notation - baseline vs casual
+⏭️  Skipped (already processed): big O notation - baseline vs casual_round2
+⏭️  Skipped (already processed): big O notation - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): big O notation - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - baseline_round2 vs casual
+⏭️  Skipped (already processed): big O notation - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): big O notation - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big O notation - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - casual vs casual_round2
+⏭️  Skipped (already processed): big O notation - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): big O notation - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big O notation - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big O notation - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): big data - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): big data - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big data - 5steps vs baseline
+⏭️  Skipped (already processed): big data - 5steps vs baseline_round2
+⏭️  Skipped (already processed): big data - 5steps vs casual
+⏭️  Skipped (already processed): big data - 5steps vs casual_round2
+⏭️  Skipped (already processed): big data - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): big data - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big data - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): big data - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): big data - 5steps_round2 vs casual
+⏭️  Skipped (already processed): big data - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): big data - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - baseline vs baseline_round2
+⏭️  Skipped (already processed): big data - baseline vs casual
+⏭️  Skipped (already processed): big data - baseline vs casual_round2
+⏭️  Skipped (already processed): big data - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - baseline_round2 vs casual
+⏭️  Skipped (already processed): big data - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): big data - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - casual vs casual_round2
+⏭️  Skipped (already processed): big data - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): big data - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): big data - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): class - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): class - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): class - 5steps vs baseline
+⏭️  Skipped (already processed): class - 5steps vs baseline_round2
+⏭️  Skipped (already processed): class - 5steps vs casual
+⏭️  Skipped (already processed): class - 5steps vs casual_round2
+⏭️  Skipped (already processed): class - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): class - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): class - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): class - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): class - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): class - 5steps_round2 vs casual
+⏭️  Skipped (already processed): class - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): class - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): class - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): class - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): class - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): class - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): class - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): class - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): class - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): class - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): class - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): class - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): class - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): class - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - baseline vs baseline_round2
+⏭️  Skipped (already processed): class - baseline vs casual
+⏭️  Skipped (already processed): class - baseline vs casual_round2
+⏭️  Skipped (already processed): class - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): class - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - baseline_round2 vs casual
+⏭️  Skipped (already processed): class - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): class - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): class - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - casual vs casual_round2
+⏭️  Skipped (already processed): class - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): class - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): class - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): class - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): coding theory - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): coding theory - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): coding theory - 5steps vs baseline
+⏭️  Skipped (already processed): coding theory - 5steps vs baseline_round2
+⏭️  Skipped (already processed): coding theory - 5steps vs casual
+⏭️  Skipped (already processed): coding theory - 5steps vs casual_round2
+⏭️  Skipped (already processed): coding theory - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): coding theory - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): coding theory - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): coding theory - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): coding theory - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): coding theory - 5steps_round2 vs casual
+⏭️  Skipped (already processed): coding theory - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): coding theory - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): coding theory - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): coding theory - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - baseline vs baseline_round2
+⏭️  Skipped (already processed): coding theory - baseline vs casual
+⏭️  Skipped (already processed): coding theory - baseline vs casual_round2
+⏭️  Skipped (already processed): coding theory - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): coding theory - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - baseline_round2 vs casual
+⏭️  Skipped (already processed): coding theory - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): coding theory - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): coding theory - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - casual vs casual_round2
+⏭️  Skipped (already processed): coding theory - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): coding theory - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): coding theory - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): coding theory - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): computability theory - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): computability theory - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): computability theory - 5steps vs baseline
+⏭️  Skipped (already processed): computability theory - 5steps vs baseline_round2
+⏭️  Skipped (already processed): computability theory - 5steps vs casual
+⏭️  Skipped (already processed): computability theory - 5steps vs casual_round2
+⏭️  Skipped (already processed): computability theory - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): computability theory - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): computability theory - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): computability theory - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): computability theory - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): computability theory - 5steps_round2 vs casual
+⏭️  Skipped (already processed): computability theory - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): computability theory - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): computability theory - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): computability theory - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - baseline vs baseline_round2
+⏭️  Skipped (already processed): computability theory - baseline vs casual
+⏭️  Skipped (already processed): computability theory - baseline vs casual_round2
+⏭️  Skipped (already processed): computability theory - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): computability theory - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - baseline_round2 vs casual
+⏭️  Skipped (already processed): computability theory - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): computability theory - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): computability theory - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - casual vs casual_round2
+⏭️  Skipped (already processed): computability theory - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): computability theory - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): computability theory - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): computability theory - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs baseline
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs baseline_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs casual
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs casual_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps_round2 vs casual
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): floating-point arithmetic - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): floating-point arithmetic - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - baseline vs baseline_round2
+⏭️  Skipped (already processed): floating-point arithmetic - baseline vs casual
+⏭️  Skipped (already processed): floating-point arithmetic - baseline vs casual_round2
+⏭️  Skipped (already processed): floating-point arithmetic - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): floating-point arithmetic - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - baseline_round2 vs casual
+⏭️  Skipped (already processed): floating-point arithmetic - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): floating-point arithmetic - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): floating-point arithmetic - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - casual vs casual_round2
+⏭️  Skipped (already processed): floating-point arithmetic - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): floating-point arithmetic - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): floating-point arithmetic - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): floating-point arithmetic - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): quantum computing - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): quantum computing - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): quantum computing - 5steps vs baseline
+⏭️  Skipped (already processed): quantum computing - 5steps vs baseline_round2
+⏭️  Skipped (already processed): quantum computing - 5steps vs casual
+⏭️  Skipped (already processed): quantum computing - 5steps vs casual_round2
+⏭️  Skipped (already processed): quantum computing - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): quantum computing - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): quantum computing - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): quantum computing - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): quantum computing - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): quantum computing - 5steps_round2 vs casual
+⏭️  Skipped (already processed): quantum computing - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): quantum computing - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): quantum computing - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): quantum computing - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - baseline vs baseline_round2
+⏭️  Skipped (already processed): quantum computing - baseline vs casual
+⏭️  Skipped (already processed): quantum computing - baseline vs casual_round2
+⏭️  Skipped (already processed): quantum computing - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): quantum computing - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - baseline_round2 vs casual
+⏭️  Skipped (already processed): quantum computing - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): quantum computing - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): quantum computing - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - casual vs casual_round2
+⏭️  Skipped (already processed): quantum computing - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): quantum computing - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): quantum computing - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quantum computing - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): quicksort - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): quicksort - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): quicksort - 5steps vs baseline
+⏭️  Skipped (already processed): quicksort - 5steps vs baseline_round2
+⏭️  Skipped (already processed): quicksort - 5steps vs casual
+⏭️  Skipped (already processed): quicksort - 5steps vs casual_round2
+⏭️  Skipped (already processed): quicksort - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): quicksort - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): quicksort - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): quicksort - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): quicksort - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): quicksort - 5steps_round2 vs casual
+⏭️  Skipped (already processed): quicksort - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): quicksort - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): quicksort - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): quicksort - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - baseline vs baseline_round2
+⏭️  Skipped (already processed): quicksort - baseline vs casual
+⏭️  Skipped (already processed): quicksort - baseline vs casual_round2
+⏭️  Skipped (already processed): quicksort - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): quicksort - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - baseline_round2 vs casual
+⏭️  Skipped (already processed): quicksort - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): quicksort - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): quicksort - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - casual vs casual_round2
+⏭️  Skipped (already processed): quicksort - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): quicksort - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): quicksort - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): quicksort - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): semantics - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): semantics - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): semantics - 5steps vs baseline
+⏭️  Skipped (already processed): semantics - 5steps vs baseline_round2
+⏭️  Skipped (already processed): semantics - 5steps vs casual
+⏭️  Skipped (already processed): semantics - 5steps vs casual_round2
+⏭️  Skipped (already processed): semantics - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): semantics - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): semantics - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): semantics - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): semantics - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): semantics - 5steps_round2 vs casual
+⏭️  Skipped (already processed): semantics - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): semantics - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): semantics - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): semantics - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): semantics - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): semantics - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): semantics - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): semantics - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): semantics - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): semantics - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): semantics - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): semantics - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): semantics - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): semantics - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - baseline vs baseline_round2
+⏭️  Skipped (already processed): semantics - baseline vs casual
+⏭️  Skipped (already processed): semantics - baseline vs casual_round2
+⏭️  Skipped (already processed): semantics - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): semantics - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - baseline_round2 vs casual
+⏭️  Skipped (already processed): semantics - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): semantics - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): semantics - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - casual vs casual_round2
+⏭️  Skipped (already processed): semantics - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): semantics - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): semantics - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): semantics - level2_multi_aspect vs level2_multi_aspect_round2
+✅ Evaluation complete! Results saved to: result/evaluation_results.jsonl
+   New comparisons: 0
+   Skipped: 450
+   Total comparisons: 1305
+
+Summary Statistics:
+  5steps vs Highly_formal_academic: A: 29
+  5steps vs Highly_formal_academic_round2: A: 28
+  5steps vs Highly_formal_academic_round2: tie: 1
+  5steps vs baseline: A: 4
+  5steps vs baseline: B: 10
+  5steps vs baseline: tie: 15
+  5steps vs baseline_round2: B: 26
+  5steps vs baseline_round2: tie: 3
+  5steps vs casual: B: 28
+  5steps vs casual: tie: 1
+  5steps vs casual_round2: B: 29
+  5steps vs level2_multi_aspect: B: 23
+  5steps vs level2_multi_aspect: tie: 6
+  5steps vs level2_multi_aspect_round2: B: 29
+  5steps_round2 vs 5steps: A: 17
+  5steps_round2 vs 5steps: B: 4
+  5steps_round2 vs 5steps: tie: 8
+  5steps_round2 vs Highly_formal_academic: A: 29
+  5steps_round2 vs Highly_formal_academic_round2: A: 28
+  5steps_round2 vs Highly_formal_academic_round2: tie: 1
+  5steps_round2 vs baseline: A: 12
+  5steps_round2 vs baseline: B: 10
+  5steps_round2 vs baseline: tie: 7
+  5steps_round2 vs baseline_round2: A: 1
+  5steps_round2 vs baseline_round2: B: 19
+  5steps_round2 vs baseline_round2: tie: 9
+  5steps_round2 vs casual: B: 25
+  5steps_round2 vs casual: tie: 4
+  5steps_round2 vs casual_round2: B: 27
+  5steps_round2 vs casual_round2: tie: 2
+  5steps_round2 vs level2_multi_aspect: A: 2
+  5steps_round2 vs level2_multi_aspect: B: 16
+  5steps_round2 vs level2_multi_aspect: tie: 11
+  5steps_round2 vs level2_multi_aspect_round2: B: 26
+  5steps_round2 vs level2_multi_aspect_round2: tie: 3
+  Highly_formal_academic vs baseline: B: 29
+  Highly_formal_academic vs baseline_round2: B: 29
+  Highly_formal_academic vs casual: B: 29
+  Highly_formal_academic vs casual_round2: B: 29
+  Highly_formal_academic vs level2_multi_aspect: B: 29
+  Highly_formal_academic vs level2_multi_aspect_round2: B: 29
+  Highly_formal_academic_round2 vs Highly_formal_academic: A: 29
+  Highly_formal_academic_round2 vs baseline: B: 27
+  Highly_formal_academic_round2 vs baseline: tie: 2
+  Highly_formal_academic_round2 vs baseline_round2: B: 28
+  Highly_formal_academic_round2 vs baseline_round2: tie: 1
+  Highly_formal_academic_round2 vs casual: B: 28
+  Highly_formal_academic_round2 vs casual: tie: 1
+  Highly_formal_academic_round2 vs casual_round2: B: 28
+  Highly_formal_academic_round2 vs casual_round2: tie: 1
+  Highly_formal_academic_round2 vs level2_multi_aspect: B: 28
+  Highly_formal_academic_round2 vs level2_multi_aspect: tie: 1
+  Highly_formal_academic_round2 vs level2_multi_aspect_round2: B: 28
+  Highly_formal_academic_round2 vs level2_multi_aspect_round2: tie: 1
+  baseline vs baseline_round2: A: 5
+  baseline vs baseline_round2: B: 20
+  baseline vs baseline_round2: tie: 4
+  baseline vs casual: B: 26
+  baseline vs casual: tie: 3
+  baseline vs casual_round2: B: 28
+  baseline vs casual_round2: tie: 1
+  baseline vs level2_multi_aspect: A: 3
+  baseline vs level2_multi_aspect: B: 20
+  baseline vs level2_multi_aspect: tie: 6
+  baseline vs level2_multi_aspect_round2: B: 29
+  baseline_round2 vs casual: A: 3
+  baseline_round2 vs casual: B: 20
+  baseline_round2 vs casual: tie: 6
+  baseline_round2 vs casual_round2: A: 2
+  baseline_round2 vs casual_round2: B: 27
+  baseline_round2 vs level2_multi_aspect: A: 9
+  baseline_round2 vs level2_multi_aspect: B: 9
+  baseline_round2 vs level2_multi_aspect: tie: 11
+  baseline_round2 vs level2_multi_aspect_round2: B: 26
+  baseline_round2 vs level2_multi_aspect_round2: tie: 3
+  casual vs casual_round2: A: 6
+  casual vs casual_round2: B: 14
+  casual vs casual_round2: tie: 9
+  casual vs level2_multi_aspect: A: 24
+  casual vs level2_multi_aspect: B: 1
+  casual vs level2_multi_aspect: tie: 4
+  casual vs level2_multi_aspect_round2: A: 8
+  casual vs level2_multi_aspect_round2: B: 12
+  casual vs level2_multi_aspect_round2: tie: 9
+  casual_round2 vs level2_multi_aspect: A: 25
+  casual_round2 vs level2_multi_aspect: B: 1
+  casual_round2 vs level2_multi_aspect: tie: 3
+  casual_round2 vs level2_multi_aspect_round2: A: 12
+  casual_round2 vs level2_multi_aspect_round2: B: 13
+  casual_round2 vs level2_multi_aspect_round2: tie: 4
+  level2_multi_aspect vs level2_multi_aspect_round2: B: 25
+  level2_multi_aspect vs level2_multi_aspect_round2: tie: 4
+
+Evaluating major 'stats' with 10 files:
+  - data/response_dataset\5steps\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\5steps_round2\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\Highly_formal_academic\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\Highly_formal_academic_round2\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\baseline\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\baseline_round2\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\casual\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\casual_round2\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\level2_multi_aspect\glossary_of_stats_explanations.jsonl
+  - data/response_dataset\level2_multi_aspect_round2\glossary_of_stats_explanations.jsonl
+Loading explanation files...
+  Loaded 10 entries from 5steps (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from 5steps_round2 (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from Highly_formal_academic (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from Highly_formal_academic_round2 (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from baseline (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from baseline_round2 (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from casual (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from casual_round2 (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from level2_multi_aspect (glossary_of_stats_explanations.jsonl)
+  Loaded 10 entries from level2_multi_aspect_round2 (glossary_of_stats_explanations.jsonl)
+
+Found 10 common terms across all files.
+
+Will perform 45 pairwise comparisons per term (with order swapping: 450 total comparisons).
+Each pair will be judged in both orders (A,B and B,A) and results will be combined.
+
+Found 1305 already processed comparisons. Skipping those...
+
+⏭️  Skipped (already processed): causal study - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): causal study - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): causal study - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): causal study - 5steps vs baseline
+⏭️  Skipped (already processed): causal study - 5steps vs baseline_round2
+⏭️  Skipped (already processed): causal study - 5steps vs casual
+⏭️  Skipped (already processed): causal study - 5steps vs casual_round2
+⏭️  Skipped (already processed): causal study - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): causal study - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): causal study - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): causal study - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): causal study - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): causal study - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): causal study - 5steps_round2 vs casual
+⏭️  Skipped (already processed): causal study - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): causal study - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): causal study - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): causal study - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): causal study - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): causal study - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): causal study - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): causal study - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): causal study - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): causal study - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): causal study - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): causal study - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): causal study - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): causal study - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): causal study - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): causal study - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): causal study - baseline vs baseline_round2
+⏭️  Skipped (already processed): causal study - baseline vs casual
+⏭️  Skipped (already processed): causal study - baseline vs casual_round2
+⏭️  Skipped (already processed): causal study - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): causal study - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): causal study - baseline_round2 vs casual
+⏭️  Skipped (already processed): causal study - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): causal study - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): causal study - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): causal study - casual vs casual_round2
+⏭️  Skipped (already processed): causal study - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): causal study - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): causal study - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): causal study - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): causal study - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs baseline
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs baseline_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs casual
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs casual_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps_round2 vs casual
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): confidence interval (CI) - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): confidence interval (CI) - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - baseline vs baseline_round2
+⏭️  Skipped (already processed): confidence interval (CI) - baseline vs casual
+⏭️  Skipped (already processed): confidence interval (CI) - baseline vs casual_round2
+⏭️  Skipped (already processed): confidence interval (CI) - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): confidence interval (CI) - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - baseline_round2 vs casual
+⏭️  Skipped (already processed): confidence interval (CI) - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): confidence interval (CI) - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): confidence interval (CI) - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - casual vs casual_round2
+⏭️  Skipped (already processed): confidence interval (CI) - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): confidence interval (CI) - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): confidence interval (CI) - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): confidence interval (CI) - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): covariance - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): covariance - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): covariance - 5steps vs baseline
+⏭️  Skipped (already processed): covariance - 5steps vs baseline_round2
+⏭️  Skipped (already processed): covariance - 5steps vs casual
+⏭️  Skipped (already processed): covariance - 5steps vs casual_round2
+⏭️  Skipped (already processed): covariance - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): covariance - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): covariance - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): covariance - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): covariance - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): covariance - 5steps_round2 vs casual
+⏭️  Skipped (already processed): covariance - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): covariance - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): covariance - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): covariance - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): covariance - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): covariance - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): covariance - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): covariance - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): covariance - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): covariance - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): covariance - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): covariance - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): covariance - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): covariance - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - baseline vs baseline_round2
+⏭️  Skipped (already processed): covariance - baseline vs casual
+⏭️  Skipped (already processed): covariance - baseline vs casual_round2
+⏭️  Skipped (already processed): covariance - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): covariance - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - baseline_round2 vs casual
+⏭️  Skipped (already processed): covariance - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): covariance - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): covariance - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - casual vs casual_round2
+⏭️  Skipped (already processed): covariance - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): covariance - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): covariance - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): covariance - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): joint distribution - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): joint distribution - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): joint distribution - 5steps vs baseline
+⏭️  Skipped (already processed): joint distribution - 5steps vs baseline_round2
+⏭️  Skipped (already processed): joint distribution - 5steps vs casual
+⏭️  Skipped (already processed): joint distribution - 5steps vs casual_round2
+⏭️  Skipped (already processed): joint distribution - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): joint distribution - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): joint distribution - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): joint distribution - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): joint distribution - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): joint distribution - 5steps_round2 vs casual
+⏭️  Skipped (already processed): joint distribution - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): joint distribution - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): joint distribution - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): joint distribution - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - baseline vs baseline_round2
+⏭️  Skipped (already processed): joint distribution - baseline vs casual
+⏭️  Skipped (already processed): joint distribution - baseline vs casual_round2
+⏭️  Skipped (already processed): joint distribution - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): joint distribution - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - baseline_round2 vs casual
+⏭️  Skipped (already processed): joint distribution - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): joint distribution - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): joint distribution - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - casual vs casual_round2
+⏭️  Skipped (already processed): joint distribution - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): joint distribution - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): joint distribution - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): joint distribution - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): likelihood function - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): likelihood function - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): likelihood function - 5steps vs baseline
+⏭️  Skipped (already processed): likelihood function - 5steps vs baseline_round2
+⏭️  Skipped (already processed): likelihood function - 5steps vs casual
+⏭️  Skipped (already processed): likelihood function - 5steps vs casual_round2
+⏭️  Skipped (already processed): likelihood function - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): likelihood function - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): likelihood function - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): likelihood function - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): likelihood function - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): likelihood function - 5steps_round2 vs casual
+⏭️  Skipped (already processed): likelihood function - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): likelihood function - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): likelihood function - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): likelihood function - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - baseline vs baseline_round2
+⏭️  Skipped (already processed): likelihood function - baseline vs casual
+⏭️  Skipped (already processed): likelihood function - baseline vs casual_round2
+⏭️  Skipped (already processed): likelihood function - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): likelihood function - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - baseline_round2 vs casual
+⏭️  Skipped (already processed): likelihood function - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): likelihood function - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): likelihood function - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - casual vs casual_round2
+⏭️  Skipped (already processed): likelihood function - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): likelihood function - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): likelihood function - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): likelihood function - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): mutual independence - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): mutual independence - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): mutual independence - 5steps vs baseline
+⏭️  Skipped (already processed): mutual independence - 5steps vs baseline_round2
+⏭️  Skipped (already processed): mutual independence - 5steps vs casual
+⏭️  Skipped (already processed): mutual independence - 5steps vs casual_round2
+⏭️  Skipped (already processed): mutual independence - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): mutual independence - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): mutual independence - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): mutual independence - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): mutual independence - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): mutual independence - 5steps_round2 vs casual
+⏭️  Skipped (already processed): mutual independence - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): mutual independence - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): mutual independence - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): mutual independence - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - baseline vs baseline_round2
+⏭️  Skipped (already processed): mutual independence - baseline vs casual
+⏭️  Skipped (already processed): mutual independence - baseline vs casual_round2
+⏭️  Skipped (already processed): mutual independence - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): mutual independence - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - baseline_round2 vs casual
+⏭️  Skipped (already processed): mutual independence - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): mutual independence - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): mutual independence - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - casual vs casual_round2
+⏭️  Skipped (already processed): mutual independence - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): mutual independence - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): mutual independence - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): mutual independence - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): probability measure - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): probability measure - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): probability measure - 5steps vs baseline
+⏭️  Skipped (already processed): probability measure - 5steps vs baseline_round2
+⏭️  Skipped (already processed): probability measure - 5steps vs casual
+⏭️  Skipped (already processed): probability measure - 5steps vs casual_round2
+⏭️  Skipped (already processed): probability measure - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): probability measure - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): probability measure - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): probability measure - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): probability measure - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): probability measure - 5steps_round2 vs casual
+⏭️  Skipped (already processed): probability measure - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): probability measure - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): probability measure - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): probability measure - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - baseline vs baseline_round2
+⏭️  Skipped (already processed): probability measure - baseline vs casual
+⏭️  Skipped (already processed): probability measure - baseline vs casual_round2
+⏭️  Skipped (already processed): probability measure - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): probability measure - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - baseline_round2 vs casual
+⏭️  Skipped (already processed): probability measure - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): probability measure - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): probability measure - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - casual vs casual_round2
+⏭️  Skipped (already processed): probability measure - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): probability measure - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): probability measure - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): probability measure - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): random variable - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): random variable - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): random variable - 5steps vs baseline
+⏭️  Skipped (already processed): random variable - 5steps vs baseline_round2
+⏭️  Skipped (already processed): random variable - 5steps vs casual
+⏭️  Skipped (already processed): random variable - 5steps vs casual_round2
+⏭️  Skipped (already processed): random variable - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): random variable - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): random variable - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): random variable - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): random variable - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): random variable - 5steps_round2 vs casual
+⏭️  Skipped (already processed): random variable - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): random variable - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): random variable - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): random variable - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): random variable - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): random variable - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): random variable - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): random variable - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): random variable - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): random variable - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): random variable - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): random variable - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): random variable - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): random variable - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - baseline vs baseline_round2
+⏭️  Skipped (already processed): random variable - baseline vs casual
+⏭️  Skipped (already processed): random variable - baseline vs casual_round2
+⏭️  Skipped (already processed): random variable - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): random variable - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - baseline_round2 vs casual
+⏭️  Skipped (already processed): random variable - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): random variable - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): random variable - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - casual vs casual_round2
+⏭️  Skipped (already processed): random variable - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): random variable - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): random variable - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): random variable - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): regression analysis - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): regression analysis - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): regression analysis - 5steps vs baseline
+⏭️  Skipped (already processed): regression analysis - 5steps vs baseline_round2
+⏭️  Skipped (already processed): regression analysis - 5steps vs casual
+⏭️  Skipped (already processed): regression analysis - 5steps vs casual_round2
+⏭️  Skipped (already processed): regression analysis - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): regression analysis - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): regression analysis - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): regression analysis - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): regression analysis - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): regression analysis - 5steps_round2 vs casual
+⏭️  Skipped (already processed): regression analysis - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): regression analysis - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): regression analysis - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): regression analysis - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - baseline vs baseline_round2
+⏭️  Skipped (already processed): regression analysis - baseline vs casual
+⏭️  Skipped (already processed): regression analysis - baseline vs casual_round2
+⏭️  Skipped (already processed): regression analysis - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): regression analysis - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - baseline_round2 vs casual
+⏭️  Skipped (already processed): regression analysis - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): regression analysis - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): regression analysis - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - casual vs casual_round2
+⏭️  Skipped (already processed): regression analysis - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): regression analysis - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): regression analysis - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): regression analysis - level2_multi_aspect vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - 5steps vs 5steps_round2
+⏭️  Skipped (already processed): statistical inference - 5steps vs Highly_formal_academic
+⏭️  Skipped (already processed): statistical inference - 5steps vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): statistical inference - 5steps vs baseline
+⏭️  Skipped (already processed): statistical inference - 5steps vs baseline_round2
+⏭️  Skipped (already processed): statistical inference - 5steps vs casual
+⏭️  Skipped (already processed): statistical inference - 5steps vs casual_round2
+⏭️  Skipped (already processed): statistical inference - 5steps vs level2_multi_aspect
+⏭️  Skipped (already processed): statistical inference - 5steps vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - 5steps_round2 vs Highly_formal_academic
+⏭️  Skipped (already processed): statistical inference - 5steps_round2 vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): statistical inference - 5steps_round2 vs baseline
+⏭️  Skipped (already processed): statistical inference - 5steps_round2 vs baseline_round2
+⏭️  Skipped (already processed): statistical inference - 5steps_round2 vs casual
+⏭️  Skipped (already processed): statistical inference - 5steps_round2 vs casual_round2
+⏭️  Skipped (already processed): statistical inference - 5steps_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): statistical inference - 5steps_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic vs Highly_formal_academic_round2
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic vs baseline
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic vs baseline_round2
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic vs casual
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic vs casual_round2
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic vs level2_multi_aspect
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic_round2 vs baseline
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic_round2 vs baseline_round2
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic_round2 vs casual
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic_round2 vs casual_round2
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): statistical inference - Highly_formal_academic_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - baseline vs baseline_round2
+⏭️  Skipped (already processed): statistical inference - baseline vs casual
+⏭️  Skipped (already processed): statistical inference - baseline vs casual_round2
+⏭️  Skipped (already processed): statistical inference - baseline vs level2_multi_aspect
+⏭️  Skipped (already processed): statistical inference - baseline vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - baseline_round2 vs casual
+⏭️  Skipped (already processed): statistical inference - baseline_round2 vs casual_round2
+⏭️  Skipped (already processed): statistical inference - baseline_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): statistical inference - baseline_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - casual vs casual_round2
+⏭️  Skipped (already processed): statistical inference - casual vs level2_multi_aspect
+⏭️  Skipped (already processed): statistical inference - casual vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - casual_round2 vs level2_multi_aspect
+⏭️  Skipped (already processed): statistical inference - casual_round2 vs level2_multi_aspect_round2
+⏭️  Skipped (already processed): statistical inference - level2_multi_aspect vs level2_multi_aspect_round2
+✅ Evaluation complete! Results saved to: result/evaluation_results.jsonl
+   New comparisons: 0
+   Skipped: 450
+   Total comparisons: 1305
+
+Summary Statistics:
+  5steps vs Highly_formal_academic: A: 29
+  5steps vs Highly_formal_academic_round2: A: 28
+  5steps vs Highly_formal_academic_round2: tie: 1
+  5steps vs baseline: A: 4
+  5steps vs baseline: B: 10
+  5steps vs baseline: tie: 15
+  5steps vs baseline_round2: B: 26
+  5steps vs baseline_round2: tie: 3
+  5steps vs casual: B: 28
+  5steps vs casual: tie: 1
+  5steps vs casual_round2: B: 29
+  5steps vs level2_multi_aspect: B: 23
+  5steps vs level2_multi_aspect: tie: 6
+  5steps vs level2_multi_aspect_round2: B: 29
+  5steps_round2 vs 5steps: A: 17
+  5steps_round2 vs 5steps: B: 4
+  5steps_round2 vs 5steps: tie: 8
+  5steps_round2 vs Highly_formal_academic: A: 29
+  5steps_round2 vs Highly_formal_academic_round2: A: 28
+  5steps_round2 vs Highly_formal_academic_round2: tie: 1
+  5steps_round2 vs baseline: A: 12
+  5steps_round2 vs baseline: B: 10
+  5steps_round2 vs baseline: tie: 7
+  5steps_round2 vs baseline_round2: A: 1
+  5steps_round2 vs baseline_round2: B: 19
+  5steps_round2 vs baseline_round2: tie: 9
+  5steps_round2 vs casual: B: 25
+  5steps_round2 vs casual: tie: 4
+  5steps_round2 vs casual_round2: B: 27
+  5steps_round2 vs casual_round2: tie: 2
+  5steps_round2 vs level2_multi_aspect: A: 2
+  5steps_round2 vs level2_multi_aspect: B: 16
+  5steps_round2 vs level2_multi_aspect: tie: 11
+  5steps_round2 vs level2_multi_aspect_round2: B: 26
+  5steps_round2 vs level2_multi_aspect_round2: tie: 3
+  Highly_formal_academic vs baseline: B: 29
+  Highly_formal_academic vs baseline_round2: B: 29
+  Highly_formal_academic vs casual: B: 29
+  Highly_formal_academic vs casual_round2: B: 29
+  Highly_formal_academic vs level2_multi_aspect: B: 29
+  Highly_formal_academic vs level2_multi_aspect_round2: B: 29
+  Highly_formal_academic_round2 vs Highly_formal_academic: A: 29
+  Highly_formal_academic_round2 vs baseline: B: 27
+  Highly_formal_academic_round2 vs baseline: tie: 2
+  Highly_formal_academic_round2 vs baseline_round2: B: 28
+  Highly_formal_academic_round2 vs baseline_round2: tie: 1
+  Highly_formal_academic_round2 vs casual: B: 28
+  Highly_formal_academic_round2 vs casual: tie: 1
+  Highly_formal_academic_round2 vs casual_round2: B: 28
+  Highly_formal_academic_round2 vs casual_round2: tie: 1
+  Highly_formal_academic_round2 vs level2_multi_aspect: B: 28
+  Highly_formal_academic_round2 vs level2_multi_aspect: tie: 1
+  Highly_formal_academic_round2 vs level2_multi_aspect_round2: B: 28
+  Highly_formal_academic_round2 vs level2_multi_aspect_round2: tie: 1
+  baseline vs baseline_round2: A: 5
+  baseline vs baseline_round2: B: 20
+  baseline vs baseline_round2: tie: 4
+  baseline vs casual: B: 26
+  baseline vs casual: tie: 3
+  baseline vs casual_round2: B: 28
+  baseline vs casual_round2: tie: 1
+  baseline vs level2_multi_aspect: A: 3
+  baseline vs level2_multi_aspect: B: 20
+  baseline vs level2_multi_aspect: tie: 6
+  baseline vs level2_multi_aspect_round2: B: 29
+  baseline_round2 vs casual: A: 3
+  baseline_round2 vs casual: B: 20
+  baseline_round2 vs casual: tie: 6
+  baseline_round2 vs casual_round2: A: 2
+  baseline_round2 vs casual_round2: B: 27
+  baseline_round2 vs level2_multi_aspect: A: 9
+  baseline_round2 vs level2_multi_aspect: B: 9
+  baseline_round2 vs level2_multi_aspect: tie: 11
+  baseline_round2 vs level2_multi_aspect_round2: B: 26
+  baseline_round2 vs level2_multi_aspect_round2: tie: 3
+  casual vs casual_round2: A: 6
+  casual vs casual_round2: B: 14
+  casual vs casual_round2: tie: 9
+  casual vs level2_multi_aspect: A: 24
+  casual vs level2_multi_aspect: B: 1
+  casual vs level2_multi_aspect: tie: 4
+  casual vs level2_multi_aspect_round2: A: 8
+  casual vs level2_multi_aspect_round2: B: 12
+  casual vs level2_multi_aspect_round2: tie: 9
+  casual_round2 vs level2_multi_aspect: A: 25
+  casual_round2 vs level2_multi_aspect: B: 1
+  casual_round2 vs level2_multi_aspect: tie: 3
+  casual_round2 vs level2_multi_aspect_round2: A: 12
+  casual_round2 vs level2_multi_aspect_round2: B: 13
+  casual_round2 vs level2_multi_aspect_round2: tie: 4
+  level2_multi_aspect vs level2_multi_aspect_round2: B: 25
+  level2_multi_aspect vs level2_multi_aspect_round2: tie: 4
+
+✅ All group evaluations written to: result/evaluation_results.jsonl
+✅ Script completed successfully
+
+================================================================================
+Log ended at: 2026-03-03 18:12:05
+================================================================================
+

@@ -10,6 +10,10 @@ import sys
 import re
 import csv
 
+# Add parent directory to path for utils import
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from utils.logger import setup_logging, cleanup_logging
+
 def LLM_Judge(major: str, word: str, system_prompt: str):
     #Create a chat completion using Langfuse-integrated OpenAI client
     completion = openai.chat.completions.create(
@@ -267,22 +271,35 @@ def process_jsonl_to_explanations(jsonl_path: str, output_path: str, top_n: int 
     print(f"\nSummary: {processed_count} new entries processed, {skipped_count} skipped, {len(top_entries)} total in top {top_n}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process JSONL results and generate explanations for top N terms")
-    parser.add_argument("--input", type=str, default="data/judged_dataset/glossary_of_AI_results_top10.jsonl", help="Path to input JSONL file from data_filter.py")
-    parser.add_argument("--output", type=str, default="response_dataset/top_explanations_AI.jsonl", help="Path to output JSONL file (default: top_explanations.jsonl)")
-    parser.add_argument("--top", type=int, default=10, help="Number of top terms to process (default: 10)")
-    parser.add_argument("--prompt-file", type=str, default="prompts/baseline.json", help="Path to prompt file (JSON with 'prompt' key or plain text).")
-    parser.add_argument("--csv", type=str, default="", help="Path to the original raw_data CSV for inferring Term/Major if missing.")
-    parser.add_argument("--no-tag", action="store_true", help="Do not append prompt tag to output filename.")
+    # Set up logging
+    stdout_logger, stderr_logger = setup_logging("response_generator")
     
-    args = parser.parse_args()
-    
-    # Check if input file exists
-    if not os.path.exists(args.input):
-        print(f"Error: Input file '{args.input}' not found.")
+    try:
+        parser = argparse.ArgumentParser(description="Process JSONL results and generate explanations for top N terms")
+        parser.add_argument("--input", type=str, default="data/judged_dataset/glossary_of_AI_results_top10.jsonl", help="Path to input JSONL file from data_filter.py")
+        parser.add_argument("--output", type=str, default="response_dataset/top_explanations_AI.jsonl", help="Path to output JSONL file (default: top_explanations.jsonl)")
+        parser.add_argument("--top", type=int, default=10, help="Number of top terms to process (default: 10)")
+        parser.add_argument("--prompt-file", type=str, default="prompts/baseline.json", help="Path to prompt file (JSON with 'prompt' key or plain text).")
+        parser.add_argument("--csv", type=str, default="", help="Path to the original raw_data CSV for inferring Term/Major if missing.")
+        parser.add_argument("--no-tag", action="store_true", help="Do not append prompt tag to output filename.")
+        
+        args = parser.parse_args()
+        
+        # Check if input file exists
+        if not os.path.exists(args.input):
+            print(f"Error: Input file '{args.input}' not found.")
+            sys.exit(1)
+        
+        prompt_template = load_prompt_file(args.prompt_file)
+        final_output = args.output if args.no_tag else build_output_path_with_prompt(args.output, args.prompt_file)
+        process_jsonl_to_explanations(args.input, final_output, args.top, prompt_template, args.csv)
+        print("✅ Script completed successfully")
+        
+    except Exception as e:
+        print(f"❌ Error occurred: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
-    
-    prompt_template = load_prompt_file(args.prompt_file)
-    final_output = args.output if args.no_tag else build_output_path_with_prompt(args.output, args.prompt_file)
-    process_jsonl_to_explanations(args.input, final_output, args.top, prompt_template, args.csv)
+    finally:
+        cleanup_logging(stdout_logger, stderr_logger)
    

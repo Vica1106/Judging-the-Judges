@@ -9,6 +9,10 @@ import json
 import argparse
 import sys
 
+# Add parent directory to path for utils import
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from utils.logger import setup_logging, cleanup_logging
+
 def LLM_Judge(major: str, term: str, explanation: str = None):
     #Create a chat completion using Langfuse-integrated OpenAI client
     system_prompt = """
@@ -121,17 +125,30 @@ def process_csv_to_jsonl(major:str, csv_path: str, output_path: str):
     print(f"\nSummary: {processed_count} new entries processed, {skipped_count} skipped, {total_rows} total in CSV")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process CSV files and generate JSONL output with LLM judgments")
-    parser.add_argument("--major", type=str, required=True, help="Academic major name (e.g., 'Physics', 'AI', 'Computer Science')")
-    parser.add_argument("--input", type=str, required=True, help="Path to input CSV file")
-    parser.add_argument("--output", type=str, default="results.jsonl", help="Path to output JSONL file (default: results.jsonl)")
+    # Set up logging
+    stdout_logger, stderr_logger = setup_logging("data_filter")
     
-    args = parser.parse_args()
-    
-    # Check if input file exists
-    if not os.path.exists(args.input):
-        print(f"Error: Input file '{args.input}' not found.")
+    try:
+        parser = argparse.ArgumentParser(description="Process CSV files and generate JSONL output with LLM judgments")
+        parser.add_argument("--major", type=str, required=True, help="Academic major name (e.g., 'Physics', 'AI', 'Computer Science')")
+        parser.add_argument("--input", type=str, required=True, help="Path to input CSV file")
+        parser.add_argument("--output", type=str, default="results.jsonl", help="Path to output JSONL file (default: results.jsonl)")
+        
+        args = parser.parse_args()
+        
+        # Check if input file exists
+        if not os.path.exists(args.input):
+            print(f"Error: Input file '{args.input}' not found.")
+            sys.exit(1)
+        
+        process_csv_to_jsonl(args.major, args.input, args.output)
+        print("✅ Script completed successfully")
+        
+    except Exception as e:
+        print(f"❌ Error occurred: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
-    
-    process_csv_to_jsonl(args.major, args.input, args.output)
+    finally:
+        cleanup_logging(stdout_logger, stderr_logger)
    

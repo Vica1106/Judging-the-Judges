@@ -1,0 +1,89 @@
+
+================================================================================
+Log started at: 2026-03-03 17:54:15
+================================================================================
+
+Logging to: utils/logger\data_filter_20260303_175415.log
+Script: data_filter
+--------------------------------------------------------------------------------
+Found 72 already processed terms. Skipping those...
+⏭️  Skipped (already processed): atomic event
+⏭️  Skipped (already processed): bias
+⏭️  Skipped (already processed): binary data
+⏭️  Skipped (already processed): bivariate analysis
+⏭️  Skipped (already processed): blocking
+⏭️  Skipped (already processed): causal study
+⏭️  Skipped (already processed): computational statistics
+⏭️  Skipped (already processed): concomitants
+⏭️  Skipped (already processed): conditional distribution
+⏭️  Skipped (already processed): conditional probability
+⏭️  Skipped (already processed): confidence interval (CI)
+⏭️  Skipped (already processed): confidence level
+⏭️  Skipped (already processed): confounder
+⏭️  Skipped (already processed): correlation
+⏭️  Skipped (already processed): count data
+⏭️  Skipped (already processed): covariance
+⏭️  Skipped (already processed): data set
+⏭️  Skipped (already processed): data point
+⏭️  Skipped (already processed): elementary event
+⏭️  Skipped (already processed): estimation theory
+⏭️  Skipped (already processed): estimator
+⏭️  Skipped (already processed): expected value
+⏭️  Skipped (already processed): experiment
+⏭️  Skipped (already processed): event
+⏭️  Skipped (already processed): histogram
+⏭️  Skipped (already processed): interquartile range (IQR)
+⏭️  Skipped (already processed): joint distribution
+⏭️  Skipped (already processed): joint probability
+⏭️  Skipped (already processed): kurtosis
+⏭️  Skipped (already processed): law of large numbers (LLN)
+⏭️  Skipped (already processed): likelihood function
+⏭️  Skipped (already processed): marginal distribution
+⏭️  Skipped (already processed): marginal probability
+⏭️  Skipped (already processed): mean
+⏭️  Skipped (already processed): moving average
+⏭️  Skipped (already processed): multivariate random variable
+⏭️  Skipped (already processed): mutual independence
+✅ Processed: null hypothesis (H 0 )
+⏭️  Skipped (already processed): pairwise independence
+⏭️  Skipped (already processed): parameter
+⏭️  Skipped (already processed): prior probability
+⏭️  Skipped (already processed): population parameter
+⏭️  Skipped (already processed): posterior probability
+⏭️  Skipped (already processed): probability density
+⏭️  Skipped (already processed): probability density function
+⏭️  Skipped (already processed): probability distribution
+⏭️  Skipped (already processed): probability measure
+⏭️  Skipped (already processed): probability space
+⏭️  Skipped (already processed): quantile
+⏭️  Skipped (already processed): quartile
+⏭️  Skipped (already processed): random variable
+⏭️  Skipped (already processed): range
+⏭️  Skipped (already processed): regression analysis
+⏭️  Skipped (already processed): response variable
+⏭️  Skipped (already processed): sample
+⏭️  Skipped (already processed): sample mean
+⏭️  Skipped (already processed): sample space
+⏭️  Skipped (already processed): sampling
+⏭️  Skipped (already processed): sampling distribution
+⏭️  Skipped (already processed): skewness
+⏭️  Skipped (already processed): standard deviation
+⏭️  Skipped (already processed): statistic
+⏭️  Skipped (already processed): statistical independence
+⏭️  Skipped (already processed): statistical inference
+⏭️  Skipped (already processed): statistical population
+⏭️  Skipped (already processed): statistical dispersion
+⏭️  Skipped (already processed): statistical parameter
+⏭️  Skipped (already processed): tidy data
+⏭️  Skipped (already processed): treatments
+⏭️  Skipped (already processed): trial
+⏭️  Skipped (already processed): units
+⏭️  Skipped (already processed): variance
+
+Summary: 1 new entries processed, 71 skipped, 72 total in CSV
+✅ Script completed successfully
+
+================================================================================
+Log ended at: 2026-03-03 17:54:23
+================================================================================
+

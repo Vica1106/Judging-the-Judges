@@ -10,9 +10,33 @@ DATA_DIR="$SCRIPT_DIR/data/raw_data"
 PYTHON_SCRIPT="$SCRIPT_DIR/data/data_filter.py"
 RESPONSE_SCRIPT="$SCRIPT_DIR/data/response_generator.py"
 
-# Prompt variants to generate responses for
-PROMPT_VARIANTS=("baseline" "level2_multi_aspect" "level3_multi_perspective")
-PROMPT_DIR="$SCRIPT_DIR/prompts"
+# Prompt variants to generate responses for - dynamically read all JSON files from prompts/round1
+PROMPT_DIR="$SCRIPT_DIR/prompts/round1"
+
+# Check if prompt directory exists
+if [ ! -d "$PROMPT_DIR" ]; then
+    echo "Error: Prompt directory '$PROMPT_DIR' not found."
+    exit 1
+fi
+
+# Dynamically populate PROMPT_VARIANTS from all JSON files in prompts/round1
+PROMPT_VARIANTS=()
+for prompt_file in "$PROMPT_DIR"/*.json; do
+    if [ -f "$prompt_file" ]; then
+        # Extract basename without .json extension
+        variant=$(basename "$prompt_file" .json)
+        PROMPT_VARIANTS+=("$variant")
+    fi
+done
+
+# Check if any prompt variants were found
+if [ ${#PROMPT_VARIANTS[@]} -eq 0 ]; then
+    echo "Error: No JSON prompt files found in '$PROMPT_DIR'"
+    exit 1
+fi
+
+echo "Found ${#PROMPT_VARIANTS[@]} prompt variant(s): ${PROMPT_VARIANTS[*]}"
+echo ""
 
 # Check if data directory exists
 if [ ! -d "$DATA_DIR" ]; then

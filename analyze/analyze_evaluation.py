@@ -1,7 +1,13 @@
 import json
 import os
 import argparse
+import sys
 from collections import defaultdict
+from pathlib import Path
+
+# Add parent directory to path for utils import
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+from utils.logger import setup_logging, cleanup_logging
 
 def calculate_elo_ratings(results, initial_rating=1500, k_factor=32):
     """
@@ -182,6 +188,29 @@ def analyze_evaluation_results(input_path: str, initial_rating=1500, k_factor=32
         "ranking": ranking
     }
 
+def check_if_output_up_to_date(input_path: str, output_path: str) -> bool:
+    """
+    Check if output file exists and is newer than input file.
+    
+    Args:
+        input_path: Path to input file
+        output_path: Path to output file
+    
+    Returns:
+        True if output exists and is up to date, False otherwise
+    """
+    if not os.path.exists(output_path):
+        return False
+    
+    if not os.path.exists(input_path):
+        return False
+    
+    input_mtime = os.path.getmtime(input_path)
+    output_mtime = os.path.getmtime(output_path)
+    
+    # Output is up to date if it's newer than input
+    return output_mtime >= input_mtime
+
 def save_elo_results(elo_data, output_path: str):
     """Save Elo ratings and ranking to JSON file"""
     # Round Elo ratings for cleaner output
@@ -200,23 +229,45 @@ def save_elo_results(elo_data, output_path: str):
     print(f"\n✅ Elo ratings saved to: {output_path}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Analyze evaluation results and calculate Elo ratings")
-    parser.add_argument("--input", type=str, default="result/evaluation_results.jsonl",
-                       help="Path to evaluation results JSONL file")
-    parser.add_argument("--output", type=str, default="result/elo_ratings.json",
-                       help="Path to output JSON file with Elo ratings and ranking")
-    parser.add_argument("--k-factor", type=float, default=32.0,
-                       help="K-factor for Elo rating updates (default: 32)")
-    parser.add_argument("--initial-rating", type=float, default=1500.0,
-                       help="Initial Elo rating (default: 1500)")
+    # Set up logging
+    stdout_logger, stderr_logger = setup_logging("analyze_evaluation")
     
-    args = parser.parse_args()
-    
-    # Run analysis and get Elo ratings
-    elo_data = analyze_evaluation_results(args.input, args.initial_rating, args.k_factor)
-    
-    if elo_data:
-        save_elo_results(elo_data, args.output)
-    else:
-        print(f"Error: Could not process results from {args.input}")
+    try:
+        parser = argparse.ArgumentParser(description="Analyze evaluation results and calculate Elo ratings")
+        parser.add_argument("--input", type=str, default="result/evaluation_results.jsonl",
+                           help="Path to evaluation results JSONL file")
+        parser.add_argument("--output", type=str, default="result/elo_ratings.json",
+                           help="Path to output JSON file with Elo ratings and ranking")
+        parser.add_argument("--k-factor", type=float, default=32.0,
+                           help="K-factor for Elo rating updates (default: 32)")
+        parser.add_argument("--initial-rating", type=float, default=1500.0,
+                           help="Initial Elo rating (default: 1500)")
+        
+        args = parser.parse_args()
+        
+        # Check if output file already exists and is up to date
+        if check_if_output_up_to_date(args.input, args.output):
+            print(f"✅ Output file '{args.output}' already exists and is up to date.")
+            print(f"   Input file: {args.input}")
+            print(f"   Output file: {args.output}")
+            print(f"   Skipping recalculation. Delete output file to force recalculation.")
+            print("✅ Script completed successfully (skipped)")
+        else:
+            # Run analysis and get Elo ratings
+            elo_data = analyze_evaluation_results(args.input, args.initial_rating, args.k_factor)
+            
+            if elo_data:
+                save_elo_results(elo_data, args.output)
+                print("✅ Script completed successfully")
+            else:
+                print(f"Error: Could not process results from {args.input}")
+                sys.exit(1)
+            
+    except Exception as e:
+        print(f"❌ Error occurred: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+    finally:
+        cleanup_logging(stdout_logger, stderr_logger)
 

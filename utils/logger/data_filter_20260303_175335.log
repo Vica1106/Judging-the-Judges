@@ -1,0 +1,307 @@
+
+================================================================================
+Log started at: 2026-03-03 17:53:35
+================================================================================
+
+Logging to: utils/logger\data_filter_20260303_175335.log
+Script: data_filter
+--------------------------------------------------------------------------------
+Found 290 already processed terms. Skipping those...
+⏭️  Skipped (already processed): abstract data type (ADT)
+⏭️  Skipped (already processed): abstract method
+⏭️  Skipped (already processed): abstraction
+⏭️  Skipped (already processed): agent architecture
+⏭️  Skipped (already processed): agent-based model (ABM)
+⏭️  Skipped (already processed): aggregate function
+⏭️  Skipped (already processed): agile software development
+⏭️  Skipped (already processed): algorithm
+⏭️  Skipped (already processed): algorithm design
+⏭️  Skipped (already processed): algorithmic efficiency
+⏭️  Skipped (already processed): American Standard Code for Information Interchange (ASCII)
+⏭️  Skipped (already processed): application programming interface (API)
+⏭️  Skipped (already processed): application software
+⏭️  Skipped (already processed): array data structure
+⏭️  Skipped (already processed): artifact
+⏭️  Skipped (already processed): artificial intelligence (AI)
+⏭️  Skipped (already processed): ASCII
+⏭️  Skipped (already processed): assertion
+⏭️  Skipped (already processed): associative array
+⏭️  Skipped (already processed): automata theory
+⏭️  Skipped (already processed): automated reasoning
+⏭️  Skipped (already processed): bandwidth
+⏭️  Skipped (already processed): Bayesian programming
+⏭️  Skipped (already processed): benchmark
+⏭️  Skipped (already processed): best, worst and average case
+⏭️  Skipped (already processed): big data
+⏭️  Skipped (already processed): big O notation
+⏭️  Skipped (already processed): binary number
+⏭️  Skipped (already processed): binary search algorithm
+⏭️  Skipped (already processed): binary tree
+⏭️  Skipped (already processed): bioinformatics
+⏭️  Skipped (already processed): bit
+✅ Processed: bit rate ( R )
+⏭️  Skipped (already processed): blacklist
+⏭️  Skipped (already processed): BMP file format
+⏭️  Skipped (already processed): Boolean data type
+⏭️  Skipped (already processed): Boolean expression
+⏭️  Skipped (already processed): Boolean algebra
+⏭️  Skipped (already processed): byte
+⏭️  Skipped (already processed): booting
+⏭️  Skipped (already processed): callback
+⏭️  Skipped (already processed): central processing unit (CPU)
+⏭️  Skipped (already processed): character
+⏭️  Skipped (already processed): CI/CD
+⏭️  Skipped (already processed): cipher
+⏭️  Skipped (already processed): class
+⏭️  Skipped (already processed): class-based programming
+⏭️  Skipped (already processed): client
+⏭️  Skipped (already processed): cleanroom software engineering
+⏭️  Skipped (already processed): closure
+⏭️  Skipped (already processed): cloud computing
+⏭️  Skipped (already processed): code library
+⏭️  Skipped (already processed): coding
+⏭️  Skipped (already processed): coding theory
+⏭️  Skipped (already processed): cognitive science
+⏭️  Skipped (already processed): collection
+⏭️  Skipped (already processed): comma-separated values (CSV)
+⏭️  Skipped (already processed): compiler
+⏭️  Skipped (already processed): computability theory
+⏭️  Skipped (already processed): computation
+✅ Processed: computational biology
+⏭️  Skipped (already processed): computational chemistry
+⏭️  Skipped (already processed): computational complexity theory
+⏭️  Skipped (already processed): computational model
+⏭️  Skipped (already processed): computational neuroscience
+⏭️  Skipped (already processed): computational physics
+⏭️  Skipped (already processed): computational science
+⏭️  Skipped (already processed): computational steering
+⏭️  Skipped (already processed): computer
+⏭️  Skipped (already processed): computer architecture
+⏭️  Skipped (already processed): computer data storage
+⏭️  Skipped (already processed): computer ethics
+⏭️  Skipped (already processed): computer graphics
+⏭️  Skipped (already processed): computer network
+⏭️  Skipped (already processed): computer program
+⏭️  Skipped (already processed): computer programming
+⏭️  Skipped (already processed): computer science
+⏭️  Skipped (already processed): computer scientist
+⏭️  Skipped (already processed): computer security
+⏭️  Skipped (already processed): computer vision
+⏭️  Skipped (already processed): computing
+⏭️  Skipped (already processed): concatenation
+⏭️  Skipped (already processed): Concurrency
+⏭️  Skipped (already processed): conditional
+⏭️  Skipped (already processed): container
+⏭️  Skipped (already processed): continuous delivery (CD)
+⏭️  Skipped (already processed): continuous deployment (CD)
+⏭️  Skipped (already processed): continuous integration (CI)
+⏭️  Skipped (already processed): continuation-passing style (CPS)
+⏭️  Skipped (already processed): control flow
+⏭️  Skipped (already processed): Creative Commons (CC)
+⏭️  Skipped (already processed): cryptography
+⏭️  Skipped (already processed): CSV
+⏭️  Skipped (already processed): cyberbullying
+⏭️  Skipped (already processed): cyberspace
+⏭️  Skipped (already processed): daemon
+⏭️  Skipped (already processed): Data
+⏭️  Skipped (already processed): data center
+⏭️  Skipped (already processed): database
+⏭️  Skipped (already processed): data mining
+⏭️  Skipped (already processed): data science
+⏭️  Skipped (already processed): data structure
+⏭️  Skipped (already processed): data type
+⏭️  Skipped (already processed): debugging
+⏭️  Skipped (already processed): declaration
+⏭️  Skipped (already processed): digital data
+⏭️  Skipped (already processed): digital signal processing ( DSP )
+⏭️  Skipped (already processed): discrete event simulation ( DES )
+⏭️  Skipped (already processed): disk storage
+⏭️  Skipped (already processed): distributed computing
+⏭️  Skipped (already processed): divide and conquer algorithm
+⏭️  Skipped (already processed): DNS
+⏭️  Skipped (already processed): documentation
+⏭️  Skipped (already processed): domain
+⏭️  Skipped (already processed): Domain Name System (DNS)
+⏭️  Skipped (already processed): double-precision floating-point format
+⏭️  Skipped (already processed): download
+⏭️  Skipped (already processed): edge device
+⏭️  Skipped (already processed): emulator
+⏭️  Skipped (already processed): encryption
+⏭️  Skipped (already processed): event
+⏭️  Skipped (already processed): event-driven programming
+⏭️  Skipped (already processed): evolutionary computing
+⏭️  Skipped (already processed): executable
+⏭️  Skipped (already processed): execution
+⏭️  Skipped (already processed): exception handling
+⏭️  Skipped (already processed): Existence detection
+⏭️  Skipped (already processed): expression
+⏭️  Skipped (already processed): fault-tolerant computer system
+⏭️  Skipped (already processed): feasibility study
+⏭️  Skipped (already processed): field
+⏭️  Skipped (already processed): filename extension
+⏭️  Skipped (already processed): filter (software)
+⏭️  Skipped (already processed): floating-point arithmetic
+⏭️  Skipped (already processed): game theory
+⏭️  Skipped (already processed): garbage in, garbage out (GIGO)
+⏭️  Skipped (already processed): gigabyte
+⏭️  Skipped (already processed): global variable
+⏭️  Skipped (already processed): graph theory
+⏭️  Skipped (already processed): handle
+⏭️  Skipped (already processed): hard problem
+⏭️  Skipped (already processed): hash function
+⏭️  Skipped (already processed): hash table
+⏭️  Skipped (already processed): heap
+⏭️  Skipped (already processed): heapsort
+⏭️  Skipped (already processed): human-computer interaction (HCI)
+⏭️  Skipped (already processed): identifier
+⏭️  Skipped (already processed): IDE
+⏭️  Skipped (already processed): imperative programming
+⏭️  Skipped (already processed): incremental build model
+⏭️  Skipped (already processed): information space analysis
+⏭️  Skipped (already processed): inheritance
+⏭️  Skipped (already processed): input/output (I/O)
+⏭️  Skipped (already processed): insertion sort
+⏭️  Skipped (already processed): instruction cycle
+⏭️  Skipped (already processed): integer
+⏭️  Skipped (already processed): integrated development environment (IDE)
+⏭️  Skipped (already processed): integration testing
+⏭️  Skipped (already processed): intellectual property (IP)
+⏭️  Skipped (already processed): intelligent agent
+⏭️  Skipped (already processed): interface
+⏭️  Skipped (already processed): internal documentation
+⏭️  Skipped (already processed): internet
+⏭️  Skipped (already processed): internet bot
+⏭️  Skipped (already processed): interpreter
+⏭️  Skipped (already processed): invariant
+⏭️  Skipped (already processed): iteration
+⏭️  Skipped (already processed): Java
+⏭️  Skipped (already processed): kernel
+⏭️  Skipped (already processed): library (computing)
+⏭️  Skipped (already processed): linear search
+⏭️  Skipped (already processed): linked list
+⏭️  Skipped (already processed): linker
+⏭️  Skipped (already processed): list
+⏭️  Skipped (already processed): loader
+⏭️  Skipped (already processed): logic error
+⏭️  Skipped (already processed): logic programming
+⏭️  Skipped (already processed): machine learning (ML)
+⏭️  Skipped (already processed): machine vision (MV)
+⏭️  Skipped (already processed): mathematical logic
+⏭️  Skipped (already processed): matrix
+⏭️  Skipped (already processed): memory
+⏭️  Skipped (already processed): merge sort
+⏭️  Skipped (already processed): method
+⏭️  Skipped (already processed): methodology
+⏭️  Skipped (already processed): modem
+⏭️  Skipped (already processed): natural language processing (NLP)
+⏭️  Skipped (already processed): node
+⏭️  Skipped (already processed): number theory
+⏭️  Skipped (already processed): numerical analysis
+⏭️  Skipped (already processed): numerical method
+⏭️  Skipped (already processed): object
+⏭️  Skipped (already processed): object code
+⏭️  Skipped (already processed): object-oriented analysis and design (OOAD)
+⏭️  Skipped (already processed): object-oriented programming (OOP)
+⏭️  Skipped (already processed): open-source software (OSS)
+⏭️  Skipped (already processed): operating system (OS)
+⏭️  Skipped (already processed): optical fiber
+⏭️  Skipped (already processed): pair programming
+⏭️  Skipped (already processed): parallel computing
+⏭️  Skipped (already processed): parameter
+⏭️  Skipped (already processed): peripheral
+⏭️  Skipped (already processed): pointer
+⏭️  Skipped (already processed): postcondition
+⏭️  Skipped (already processed): precondition
+⏭️  Skipped (already processed): primary storage
+⏭️  Skipped (already processed): priority queue
+⏭️  Skipped (already processed): Procedural generation
+⏭️  Skipped (already processed): procedure
+⏭️  Skipped (already processed): program lifecycle phase
+⏭️  Skipped (already processed): programming language
+⏭️  Skipped (already processed): programming language implementation
+⏭️  Skipped (already processed): programming language theory
+⏭️  Skipped (already processed): Prolog
+⏭️  Skipped (already processed): Python
+⏭️  Skipped (already processed): quantum computing
+⏭️  Skipped (already processed): queue
+⏭️  Skipped (already processed): quicksort
+⏭️  Skipped (already processed): R programming language
+⏭️  Skipped (already processed): radix
+⏭️  Skipped (already processed): record
+⏭️  Skipped (already processed): recursion
+⏭️  Skipped (already processed): reference
+⏭️  Skipped (already processed): reference counting
+⏭️  Skipped (already processed): regression testing
+⏭️  Skipped (already processed): relational database
+⏭️  Skipped (already processed): reliability engineering
+⏭️  Skipped (already processed): requirements analysis
+⏭️  Skipped (already processed): robotics
+⏭️  Skipped (already processed): round-off error
+⏭️  Skipped (already processed): router
+⏭️  Skipped (already processed): routing table
+⏭️  Skipped (already processed): run time
+⏭️  Skipped (already processed): run time error
+⏭️  Skipped (already processed): search algorithm
+⏭️  Skipped (already processed): secondary storage
+⏭️  Skipped (already processed): selection sort
+⏭️  Skipped (already processed): semantics
+⏭️  Skipped (already processed): sequence
+⏭️  Skipped (already processed): serializability
+⏭️  Skipped (already processed): serialization
+⏭️  Skipped (already processed): server
+⏭️  Skipped (already processed): service level agreement
+⏭️  Skipped (already processed): set
+⏭️  Skipped (already processed): singleton variable
+⏭️  Skipped (already processed): software
+⏭️  Skipped (already processed): software agent
+⏭️  Skipped (already processed): software construction
+⏭️  Skipped (already processed): software deployment
+⏭️  Skipped (already processed): software design
+⏭️  Skipped (already processed): software development
+⏭️  Skipped (already processed): software development process
+⏭️  Skipped (already processed): software engineering
+⏭️  Skipped (already processed): software maintenance
+⏭️  Skipped (already processed): software prototyping
+⏭️  Skipped (already processed): software requirements specification
+⏭️  Skipped (already processed): software testing
+⏭️  Skipped (already processed): sorting algorithm
+⏭️  Skipped (already processed): source code
+⏭️  Skipped (already processed): spiral model
+⏭️  Skipped (already processed): stack
+⏭️  Skipped (already processed): state
+⏭️  Skipped (already processed): statement
+⏭️  Skipped (already processed): storage
+⏭️  Skipped (already processed): stream
+⏭️  Skipped (already processed): string
+⏭️  Skipped (already processed): structured storage
+⏭️  Skipped (already processed): subroutine
+⏭️  Skipped (already processed): symbolic computation
+⏭️  Skipped (already processed): syntax
+⏭️  Skipped (already processed): syntax error
+⏭️  Skipped (already processed): system console
+⏭️  Skipped (already processed): technical documentation
+⏭️  Skipped (already processed): third-generation programming language
+⏭️  Skipped (already processed): tree
+⏭️  Skipped (already processed): type theory
+⏭️  Skipped (already processed): upload
+⏭️  Skipped (already processed): Uniform Resource Locator (URL)
+⏭️  Skipped (already processed): user
+⏭️  Skipped (already processed): user agent
+⏭️  Skipped (already processed): user interface (UI)
+⏭️  Skipped (already processed): user interface design
+⏭️  Skipped (already processed): variable
+⏭️  Skipped (already processed): virtual machine (VM)
+⏭️  Skipped (already processed): V-Model
+⏭️  Skipped (already processed): waterfall model
+⏭️  Skipped (already processed): Waveform Audio File Format
+⏭️  Skipped (already processed): web crawler
+⏭️  Skipped (already processed): Wi-Fi
+⏭️  Skipped (already processed): XHTML
+
+Summary: 2 new entries processed, 288 skipped, 290 total in CSV
+✅ Script completed successfully
+
+================================================================================
+Log ended at: 2026-03-03 17:53:53
+================================================================================
+

@@ -1,0 +1,34 @@
+
+================================================================================
+Log started at: 2026-03-03 18:14:39
+================================================================================
+
+Logging to: utils/logger\response_generator_20260303_181439.log
+Script: response_generator
+--------------------------------------------------------------------------------
+Looking for existing top 10 file at: C:/Users/jessi/OneDrive/Documents/GitHub/Judging-the-Judges/data/judged_dataset/glossary_of_stats_results_top10.jsonl
+✅ Found existing top 10 file: C:/Users/jessi/OneDrive/Documents/GitHub/Judging-the-Judges/data/judged_dataset/glossary_of_stats_results_top10.jsonl
+Using existing file instead of re-running selection process...
+
+Loaded 10 entries from existing file.
+
+Found 10 already processed terms in output file. Skipping those...
+
+⏭️  Skipped (already processed): mutual independence
+⏭️  Skipped (already processed): statistical inference
+⏭️  Skipped (already processed): joint distribution
+⏭️  Skipped (already processed): random variable
+⏭️  Skipped (already processed): confidence interval (CI)
+⏭️  Skipped (already processed): covariance
+⏭️  Skipped (already processed): likelihood function
+⏭️  Skipped (already processed): probability measure
+⏭️  Skipped (already processed): regression analysis
+⏭️  Skipped (already processed): causal study
+
+Summary: 0 new entries processed, 10 skipped, 10 total in top 10
+✅ Script completed successfully
+
+================================================================================
+Log ended at: 2026-03-03 18:14:39
+================================================================================
+

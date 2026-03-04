@@ -1,0 +1,5 @@
+{
+    "prompt": "Explain the concept {concept} for a non-expert. Please cover: (1) its basic meaning, (2) a simple real-world example, and (3) why it is important. Please keep the entire explanation under 200 words.",
+    "description": "Moderate complexity; requires covering multiple aspects."
+  }
+  
